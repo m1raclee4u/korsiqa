@@ -1,5 +1,5 @@
 <template>
-   <div class="slide">
+   <div class="slide swiper-slide">
        <div class="slider_info">
            <h1>{{product.name}}</h1>
            <span>{{product.info}}</span>
@@ -23,6 +23,7 @@ export default {
 <style lang="scss">
     .slide{              
         position: relative; 
+        right: -30px;
         // background: gray;     
         display: flex;
         align-items: flex-start;
