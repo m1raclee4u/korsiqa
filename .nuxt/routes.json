@@ -1,9 +1,16 @@
 [
   {
+    "name": "basket",
+    "path": "/basket",
+    "component": "C:\\\\Users\\\\фдмин\\\\Documents\\\\GitHub\\\\korsiqa\\\\pages\\\\basket.vue",
+    "chunkName": "pages/basket",
+    "_name": "_306b1cf3"
+  },
+  {
     "name": "index",
     "path": "/",
-    "component": "/Users/andrey/burgers/burger/pages/index.vue",
+    "component": "C:\\\\Users\\\\фдмин\\\\Documents\\\\GitHub\\\\korsiqa\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_3ac91414"
+    "_name": "_5418d835"
   }
 ]
