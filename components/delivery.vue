@@ -36,7 +36,7 @@
             </div>                     
         </div>
         <div class="delivery__map">
-            <img src="@/assets/map.png" alt="">
+            <img src="@/static/map.png" alt="">
         </div>   
     </section>
 </template>

@@ -1,5 +1,5 @@
 <template>
-   <div class="news">
+   <div class="news swiper-slide">
        <p>{{text}}</p>
    </div>
 </template>
@@ -19,11 +19,9 @@ export default {
         align-items: flex-end;
         justify-content: center;
     
-        width: 225px;
         height: 300px;
         border: 1px solid gray;   
-        background: gray;     
-        margin: 0 15px 0 0;
+        background: gray;   
             p{
                 width: 150px;
                 font-size: 20px;

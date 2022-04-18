@@ -1,11 +1,20 @@
 <template>
-    <div class="news_slider flex swiper">   
-        <oneNews v-for="item in items" :text="item.message" :key="item.message"></oneNews>
-    </div>    
+    <section class="flex swiper-container newsSlider ">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          <oneNews v-for="item in items" :text="item.message" :key="item.message"></oneNews>
+      </div>
+    </section>
+        
 </template>
 
 <style>
-.news_slider{
+.swiper-container{
+    overflow: hidden;
+    height: 300px;    
+}
+.newsSlider{
     margin-bottom: 100px;
 }
 </style>
@@ -13,7 +22,20 @@
 
 <script>
 import oneNews from './oneNews.vue'
+
+import Swiper, { Navigation, Pagination } from 'swiper'
+import 'swiper/swiper-bundle.css'
+
+Swiper.use([ Navigation, Pagination ])
+
 export default {
+    mounted() {
+    new Swiper('.newsSlider', {
+      // loop: true,
+      slidesPerView: 5.5,
+      spaceBetween: 15,
+    })
+    },
     data(){
         return{
             items: [
@@ -29,6 +51,7 @@ export default {
             ]
         }
     },
+    
     components: {
         oneNews
     }

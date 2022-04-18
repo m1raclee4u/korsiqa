@@ -167,7 +167,7 @@ export default {
         height: 476px;
         margin: 0 0 60px 0;
             &.hot{
-                background-image: url(@/assets/burger_menu_item/fire.png);
+                background-image: url(@/static/burger_menu_item/fire.png);
                 background-repeat: no-repeat;
                 background-size: 261px 331px;
                 background-position-x: 10px;
@@ -203,6 +203,9 @@ export default {
         }
         &.superhit{
             background-color: purple;
+        }
+        span{
+            margin-top: -3px;
         }
     }
     .menu__item__back{

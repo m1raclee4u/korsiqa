@@ -9,8 +9,12 @@
                     <span>Хочу прямо сейчас</span>
                 </button>
             </div>
-            <div class="slider">
-                 <oneSlide v-for="item in items" :product="item" :key="item.message"></oneSlide>
+            <div class="swiper-container foodswiper">
+                <div class="swiper-wrapper">
+                  <oneSlide v-for="item in items" :product="item" :key="item.message"></oneSlide>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -18,7 +22,23 @@
 
 <script>
 import oneSlide from './oneSlide.vue'
+
+import Swiper, { Navigation, Pagination } from 'swiper'
+import 'swiper/swiper-bundle.css'
+
+Swiper.use([ Navigation, Pagination ])
+
 export default {
+     mounted() {
+        new Swiper('.foodswiper', {
+      // loop: true,
+      slidesPerView: 1,
+      spaceBetween: 15,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    })
+    },
     data(){
         return{
             items: [
@@ -26,10 +46,37 @@ export default {
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '_nuxt/assets/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
-                }
-                
+                },
+                { 
+                name: 'Вкусняшка 43',
+                info: '30см, 500г',
+                text: 'huy', 
+                image: '@/static/burger__slide_one.png',
+                price: '599P',
+                },
+                { 
+                name: 'Вкусняшка',
+                info: '30см, 500г',
+                text: 'huy', 
+                image: '@/static/burger__slide_one.png',
+                price: '599P',
+                },
+                { 
+                name: 'Вкусняшка',
+                info: '30см, 500г',
+                text: 'huy', 
+                image: '@/static/burger__slide_one.png',
+                price: '599P',
+                },
+                { 
+                name: 'Вкусняшка 2',
+                info: '30см, 500г',
+                text: 'huy', 
+                image: '@/static/burger__slide_one.png',
+                price: '599P',
+                }             
             ]
         }
     },
@@ -40,7 +87,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
     .food_buy{
         background-color: orangered;
         padding: 20px 15px;
@@ -50,6 +97,11 @@ export default {
             }
 
     }
+    .swiper-pagination {
+        text-align: right;
+    }
+
+
     .main{
         margin-bottom: 100px;
     }    
@@ -69,8 +121,10 @@ export default {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         line-height: 80px;
     }
-    .slider{
+    .swiper-container{
+        height: 435px;
+        width: 690px;
         position: relative;
-        right: -30px;
+        margin: 0;
     }
 </style>
