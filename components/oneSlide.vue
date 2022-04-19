@@ -7,7 +7,7 @@
        </div>
 
 
-       <img :src="product.image" alt="Burger" class="back__one__slide">
+       <img :src="product.image" alt="Burger" class="back__one__slide" draggable="none" z-index: 10>
    </div>
 </template>
 
