@@ -1,33 +1,41 @@
 <template>
     <header class="header">
-        <div class="header__nav flex">
-            <div>
-                <nuxt-link to="#" class="header__logo">
-                    <h1>
-                        KORSIQA
-                    </h1>
-                </nuxt-link>
-            </div>   
-            <div class="header__buttons">                    
-                <ul class="navbar">
-                    <!-- <navBar v-for="item in items" :navBar="item" :key="item.message"></navBar> -->
-                    <li v-for="item in items" :key="item.message">
-                        {{item.message}}
-                    </li>
-                </ul>
-                <div class="header__info">
-                    <a class="header__call" href="tel:+228332">8 800 555 35 35</a>
-                    <h class="call__subtitle">Работаем с 08:00 до 22:00</h>
-                </div>
-                <button class="header__login">
-                    Войти
-                </button>
-                <div class="dropdown">
-                    <button class="header__basket">
-                        Корзина
-                    </button>
-                </div>
+        <div class="wrapper">
+            <div class="header__nav flex">
+                <div>
+                    <nuxt-link to="/" class="header__logo">
+                        <h1>
+                            KORSIQA
+                        </h1>
+                    </nuxt-link>
+                </div>   
+                <div class="header__links">                    
+                    <ul class="navbar">
+                        <!-- <navBar v-for="item in items" :navBar="item" :key="item.message"></navBar> -->
+                        <li v-for="item in items" :key="item.message">
+                            {{item.message}}
+                        </li>
+                    </ul>
+                    <div class="header__info">
+                        <a class="header__call" href="tel:+228332">8 800 555 35 35</a>
+                        <h class="call__subtitle">Работаем с 08:00 до 22:00</h>
+                    </div>
+                    <div class="header__buttons">
+                        <button class="header__login">
+                            Войти
+                        </button>
+                        <div class="basket">
+                            <button class="header__basket">
+                                <NuxtLink to="/basket">Корзина</NuxtLink>
+                            </button>
+                        </div>
+
+                    </div>
+                    
+                </div>                
             </div>
+            <!-- <BasketMenu/> -->
+
         </div>
     </header>
 </template>
@@ -38,7 +46,7 @@ export default {
   data(){
         return{
             items: [
-                { message: 'Пицца'},
+                { message: 'Бургеры'},
                 { message: 'Закуски'},
                 { message: 'Десерты'},
                 { message: 'Напитки'},
@@ -57,56 +65,32 @@ export default {
 
 <style lang="scss" scoped>
 
-    /* Dropdown Button */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+    .wrapper{
+        align-items: flex-end;
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        width: 1333px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
+    .header__buttons{
+        display: flex;
+        align-items: flex-start;
+    }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+    .basket{
+        display: flex;
+        flex-direction: column;
+    }
 
 
      .navbar {
         height: 50px;
         display: flex;
         align-items: center;
+        margin-right: 25px;
             input{
                 margin-right: 10px;
             }
@@ -145,7 +129,9 @@ a {
     font-size: 14px;
 }
 .header{
-    width: 100%;
+    width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
     position: sticky;
     top: 0px;
     // TODO от скролла менять z-index:  и высоту;
@@ -162,17 +148,15 @@ a {
     background-position: center center;
 }
 .header__nav{
+    margin-top: 40px;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;    
 }
-.header__buttons{
+.header__links{
     display: flex;
     justify-content: space-around;    
     align-items: center;    
-}
-.header__buttons a {
-    margin: 0 25px 0 0;
 }
 .header__logo {
     font-size: 25px;

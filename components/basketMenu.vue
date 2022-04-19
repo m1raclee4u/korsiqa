@@ -3,6 +3,8 @@
         <h1>Ваша корзина</h1>
         <div class="basket__slider">
             <BasketMenuSlide/>
+            <!-- <BasketMenuSlide/> -->
+            <!-- <BasketMenuSlide/> -->
         </div>
         
         <footer class="basket__footer">
@@ -25,25 +27,29 @@ export default {
 
 <style lang="scss" scoped>
 .basket__menu{
+    position: relative;
+    top: 15px;
+    left: 0px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     // min-height: 500px;
+    height: max-content;
     width: 270px;
     background-color: #fff;
         h1{
-            font-weight: 400;
+            font-weight: 500;
             font-size: 15px;
             color: black;
-            padding-left: 30px;
+            padding-left: 20px;
             // height: 85px;
             line-height: 72px;
             border-bottom: 1px solid rgba(128, 128, 128, 0.288);
         }
 }
 .basket__slider{
-    min-height: 60px;
-    padding: 30px 30px 30px 30px;
+    min-height: 120px;
+    max-height: 360px;
 }
 .basket__footer{
     display: flex;
@@ -51,19 +57,22 @@ export default {
     justify-content: center;
     
     height: 145px;
-    border-top: 1px solid rgba(128, 128, 128, 0.288);
-    padding: 5px 30px 5px 30px;
+    // border-top: 1px solid rgba(128, 128, 128, 0.288);
+    padding: 5px 20px 5px 20px;
 }
 .footer__price{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 25px;
         h2{
             color: black;
-            font-weight: 300;
+            font-weight: 400;
             color: gray;
         }
         span{
+            font-size: 20px;
+            font-weight: 500;
             color: orangered;
         }
 }
@@ -72,6 +81,8 @@ export default {
     color: white;
     background-color: orangered;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 </style>
