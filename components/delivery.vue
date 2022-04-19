@@ -51,7 +51,9 @@
 {
     width: 997px;
     height: 837px;
-    z-index: 1000;
+    z-index: 5;
+    position: absolute;
+    right: -275px;
 }
 .delivery__rules{
         h4{
@@ -84,11 +86,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 75px;
-}
-.delivery__map
-{
-    position: absolute;
-    right: -290px;
 }
 .delivery__slogan
 {

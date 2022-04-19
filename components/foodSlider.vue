@@ -30,12 +30,14 @@ Swiper.use([ Navigation, Pagination ])
 
 export default {
      mounted() {
-        new Swiper('.foodswiper', {
+      new Swiper('.foodswiper', {
+      preloadImages: false,
+      lazy: true,
       // loop: true,
       slidesPerView: 1,
       spaceBetween: 15,
       pagination: {
-        el: '.swiper-pagination',
+      el: '.swiper-pagination',
       },
     })
     },
@@ -94,6 +96,7 @@ export default {
             span{
                 color: white;
                 font-size: 18px;
+                font-weight: 300;
             }
 
     }

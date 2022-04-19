@@ -8,8 +8,8 @@
                 <div class="info">
                     <p class="footer_text">
                         Если мы не успееем доставить заказ в теченнии 60 минут <br> 
-                    минут, кроме соусов и продуктов из раздела "Другие <br> 
-                    товары", курьер подарит вам сертификат
+                        минут, кроме соусов и продуктов из раздела "Другие <br> 
+                        товары", курьер подарит вам сертификат
                     </p>
                     <a class="footer__call" href="tel:+228332">
                         8 800 555 35 35
@@ -33,7 +33,7 @@
                             Поставщикам
                         </nuxt-link>
                     </div>
-                    <div class="column__2">
+                    <div class="column__1" style="margin: 0">
                         <h3 class="footer__title">
                             ЕЩЕ КАКИЕ НИБУДЬ
                         </h3>
@@ -58,9 +58,10 @@
 
 <style lang="scss">
 .title{
-    margin-bottom: 25px;
-    font-size: 21px;
-    font-weight: 700;
+    margin-bottom: 27px;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 2px;
     color: gray;
 }
 .footer
@@ -70,15 +71,24 @@
     border-bottom: 1px solid gray;
 }
 .footer__call{
+    text-decoration: none;
     color: gray;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
 }
+.footer__title{
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
 .footer_text
 {
     color: gray;
-    
+    font-size: 14px;
+    font-weight: 300;
     margin-bottom: 25px;
+    line-height: 22px;
 }
 .footer__info
 {
@@ -102,16 +112,10 @@
     display: flex;
     flex-direction: column;
         a{
+            color: gray;
+            font-weight: 300;
             margin: 0 0 15px 0;
-        }
-}
-.column__2
-{
-    display: flex;
-    flex-direction: column;
-        a 
-        {
-            margin: 0 0 15px 0;
+            text-decoration: none;
         }
 }
 .line

@@ -12,6 +12,9 @@
 </template>
 
 <style lang="scss" scoped>
+    .last__element{
+        margin-right: 0 !important;
+    }
     .snacks{
         margin-bottom: 50px;
     }
@@ -26,7 +29,6 @@
     .snacks__slider {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     
 </style>
@@ -59,7 +61,8 @@ export default {
                 name: 'Индейка в маринаде',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'@/static/burger_menu_item/fries.png', 
-                price: 'от 559Р'
+                price: 'от 559Р',
+                position: 'last'
                 }
             ],
 

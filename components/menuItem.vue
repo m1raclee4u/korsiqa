@@ -1,9 +1,9 @@
 <template>
-    <div :data-category="menuItem.filter">        
-        <div v-if="menuItem.size==='big'" >
-            <div class="menu__item__big">
+    <div>        
+        <div v-if="menuItem.size==='big'">            
+            <div :class="{menu__item__big: true, last__element: menuItem.position==='last',}">
                 <div class="menu__item__big__info">
-                    <h4>{{menuItem.tag}}</h4>
+                    <h4>{{menuItem.tags123}}</h4>
                         <div class="menu__item__big__header">
                             <h1>{{menuItem.name}}</h1>
                         </div>    
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div v-else>
-            <div :class="{menu__item: true, hot: menuItem.type==='hot'}">     
+            <div :class="{last__element: menuItem.position==='last', menu__item: true, hot: menuItem.type==='hot'}">     
                 <div :class="{menu__item__tag: true, new: menuItem.type==='new', superhit: menuItem.type==='superhit', hot: menuItem.type==='hot'}">
                         <span v-if="menuItem.type==='new'">новинка</span>
                         <span v-if="menuItem.type==='superhit'">суперхит</span>
@@ -58,13 +58,15 @@
 export default {
     name: "test",
     props: [
-        "menuItem",
-        "menuItemBig"
+        "menuItem"
     ]
 }
 </script>
 
 <style lang="scss" scoped>
+    .last__element{
+        margin-right: 0 !important;
+    }
     .menu__item__big{     
         position: relative;  
         // background: gray;     
@@ -74,7 +76,7 @@ export default {
         justify-content: center;    
         width: 631px;
         height: 450px;
-        margin: 0 0 60px 0; 
+        margin: 0 30px 60px 0; 
             p{
                 width: 200px;
                 font-size: 16px;
@@ -165,13 +167,12 @@ export default {
         justify-content: space-between;    
         width: 280px;
         height: 476px;
-        margin: 0 0 60px 0;
+        margin: 0 71px 60px 0;
             &.hot{
                 background-image: url(@/static/burger_menu_item/fire.png);
                 background-repeat: no-repeat;
                 background-size: 261px 331px;
-                background-position-x: 10px;
-                
+                background-position-x: 10px;                
             }
             p{
                 width: 200px;
@@ -222,7 +223,8 @@ export default {
             h1{
                 margin-bottom: 12px;
                 font-size: 24px;
-                font-weight: 400;
+                font-weight: 300;
+                letter-spacing: 0.5px
             };
             span{
                 color: gray;

@@ -17,16 +17,15 @@ export default {
     .news{        
         display: flex;
         align-items: flex-end;
-        justify-content: center;
-    
+        justify-content: center;    
         height: 300px;
         border: 1px solid gray;   
         background: gray;   
             p{
-                width: 150px;
-                font-size: 20px;
-                font-weight: 400;
-                padding: 0 20px 20px 25px;
+                width: 190px;
+                font-size: 24px;
+                font-weight: 300;
+                padding: 0 25px 30px 25px;
                 color: whitesmoke;
             }
     }

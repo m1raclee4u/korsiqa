@@ -25,8 +25,12 @@
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
+        p{
+            color: gray;
+            font-size: 14px;
+        }
         a{
-        margin: 0 0 0 35px;
+            margin: 0 0 0 35px;
         }
 }
 .copyright{

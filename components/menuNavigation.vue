@@ -1,11 +1,8 @@
 <template>
     <div class="form_radio_btn">
-        <div v-if="navBar.message==='Все'">
-            <input type="radio" :id="navBar.message" name="categories" :value="navBar.message" :data-active="navBar.active" checked>
-            <label :for="navBar.message">{{navBar.message}}</label>
-        </div>
-        <div v-else>
-            <input type="radio" :id="navBar.message" name="categories" :value="navBar.message" :data-active="navBar.active">
+        {{selected}}
+        <div>
+            <input type="radio" :id="navBar.message" name="categories" :value="navBar.message" :data-tag="navBar.tag" @click="selected=navBar.message" checked>
             <label :for="navBar.message">{{navBar.message}}</label>
         </div>
     </div>
@@ -16,47 +13,22 @@
     </li> -->
 </template>
 
-<style lang="scss">
-
-
-.form_radio_btn {
-display: inline-block;
-margin-right: 25px;
-transition: 0.5s;
-color: #999;
-    input[type=radio] {
-	display: none;
+<script>
+export default {
+    name: "test",
+    props: [
+        "navBar"
+    ],
+    data(){
+        return{
+            selected: ''
+        }
     }
-    label {
-	display: inline-block;
-	cursor: pointer;
-	line-height: 34px;
-	user-select: none;
-    transition: 0.5s;
-
-    }
-    input[type=radio]:checked + label {
-	background: orangered;
-	border-radius: 3px;
-	padding: 5px 17px;
-    color: white;
-    transition: 0.5s;
-    }
-    label:hover {
-	color: #666;
-    background: orangered;
-    transition: 0.5s;
-	border-radius: 3px;
-    color: white;
-	padding: 5px 17px;
-    }
-    input[type=radio]:disabled + label {
-	background: #efefef;
-    transition: 0.5s;
-    }
+    
 }
+</script>
 
-
+<style lang="scss">
     .navigation{
         flex-direction: row;
         text-decoration: none;
@@ -88,11 +60,3 @@ color: #999;
     }
 </style>
 
-<script>
-export default {
-    name: "test",
-    props: [
-        "navBar"
-    ]
-}
-</script>

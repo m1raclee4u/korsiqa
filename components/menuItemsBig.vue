@@ -1,7 +1,6 @@
 <template>
    <div class="menu__item__big">
        <div class="menu__item__big__info">
-           <h4>{{menuItemBig.tag}}</h4>
             <div class="menu__item__big__header">
                 <h1>{{menuItemBig.name}}</h1>
             </div>    
