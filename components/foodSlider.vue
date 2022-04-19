@@ -1,6 +1,5 @@
 <template>
     <section class="main">
-         <!-- <img src="../static/light.png" alt="" style="z-index: 101; position: absolute; top: -30px; right: -100px; opacity: 0.3" draggable="false"> -->
         <div class="content flex">
             <div class="left">
                 <h2 class="slogan">
@@ -10,13 +9,13 @@
                     <span>Хочу прямо сейчас</span>
                 </button>
             </div>
-                <div class="swiper-container foodswiper">
-                    <div class="swiper-wrapper">
-                    <oneSlide v-for="item in items" :product="item" :key="item.message"></oneSlide>
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
+            <div class="swiper-container foodswiper">
+                <div class="swiper-wrapper">
+                  <oneSlide v-for="item in items" :product="item" :key="item.message"></oneSlide>
                 </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </section>
 </template>
@@ -36,7 +35,7 @@ export default {
       lazy: true,
       // loop: true,
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 15,
       pagination: {
       el: '.swiper-pagination',
       },
@@ -49,35 +48,35 @@ export default {
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
                 },
                 { 
                 name: 'Вкусняшка 43',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
                 },
                 { 
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
                 },
                 { 
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
                 },
                 { 
                 name: 'Вкусняшка 2',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: '@/static/burger__slide_one.png',
                 price: '599P',
                 }             
             ]
@@ -124,12 +123,6 @@ export default {
         font-weight: 400;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         line-height: 80px;
-    }
-    .light{
-        
-        z-index: 103;
-
-        filter: drop-shadow(0 0 120px #fed568);
     }
     .swiper-container{
         height: 435px;
