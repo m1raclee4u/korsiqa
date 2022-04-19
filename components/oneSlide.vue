@@ -5,8 +5,7 @@
            <span>{{product.info}}</span>
            <h5>{{product.price}}</h5>
        </div>
-
-
+   
        <img :src="product.image" alt="Burger" class="back__one__slide">
    </div>
 </template>
@@ -28,7 +27,7 @@ export default {
         display: flex;
         align-items: flex-start;
         justify-content: center;    
-        width: 690px;
+        width: 700px;
         height: 435px;
             p{
                 width: 200px;
@@ -64,8 +63,9 @@ export default {
     .back__one__slide{
         position: absolute;
         width: 100%;
-        height: 100%;
-        animation: updown 4s ease infinite;
+        height: 95%;
+        animation: updown 4s ease infinite;        
+        filter: drop-shadow(0 15px 5px #00000066);
     }
     
     </style>

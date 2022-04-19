@@ -148,6 +148,7 @@ a {
     width: 100%;
     position: sticky;
     top: 0px;
+    // TODO от скролла менять z-index:  и высоту;
     z-index: 100;
     display: flex;
     align-content: center;
@@ -155,6 +156,10 @@ a {
     background-color: rgb(19, 19, 19);
     border-bottom: 1px solid rgb(55, 55, 55);
     margin-bottom: 130px;
+    background-image: url(../static/back.jpg);
+    background-size: 1920px;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 .header__nav{
     justify-content: space-between;

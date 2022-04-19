@@ -1,4 +1,10 @@
 {
+  "BasketMenu": {
+    "description": "Auto imported from components/basketMenu.vue"
+  },
+  "BasketMenuSlide": {
+    "description": "Auto imported from components/basketMenuSlide.vue"
+  },
   "Copyright": {
     "description": "Auto imported from components/copyright.vue"
   },

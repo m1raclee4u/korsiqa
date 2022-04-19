@@ -33,6 +33,7 @@
     button {
        border-radius: 5px;
        border: none;
+       cursor: pointer;
     }
     h, h2, h3, h4, p{
       margin-block-start: 0px;
@@ -58,6 +59,11 @@
     img {
       max-width: 100%;
       height: auto;
+      pointer-events: none;
+      -moz-user-select: none; 
+      -webkit-user-select: none; 
+      -ms-user-select: none; 
+      user-select: none;
     }
     .flex{
       display: flex;

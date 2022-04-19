@@ -1,100 +1,12 @@
 <template>
   <div class="container">
     <Header />
+    <BasketMenu/>
     <Footer />
     <Copyright />    
   </div>
 </template>
 
 <style>
-  /*reset*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
-em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
-caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
-embed, figure, figcaption, footer, header, menu, nav, output, ruby, section,
-summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%;}
-
-input, textarea, select {
-   -webkit-appearance: none;
-   -moz-appearance: none;
- }
-
- .swiper-pagination-bullet{
-   background-color: #fff;
- }
-
-  section{
-    width: 1333px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  a{
-    color: whitesmoke;
-  }
-  button {
-     border-radius: 5px;
-     border: none;
-  }
-  h, h2, h3, h4, p{
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    color: whitesmoke;
-  }
-  h1{ 
-    margin-block-start: 0em; 
-    margin-block-end: 0em;  
-    margin-inline-start: 0px; 
-    margin-inline-end: 0px; 
-    font-weight: bold;
-    color: whitesmoke;
-  }
-  body{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(19, 19, 19);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  .flex{
-    display: flex;
-    width: 1333px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  h4 {
-    font-size: 22px;
-    color: orangered;
-    font-weight: 400;
-  }
-  
-  @media (max-width: 1366px) {
-    .delivery__map{
-      width: 850px;
-    }
-  }
-
-
-
-
-@keyframes updown {
-  0% {
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
-
-  100% {
-    transform: translateY(-5px);
-  }
-}
-
+ 
 </style>

@@ -12,6 +12,9 @@
             </div>
             
         </div>
+         <picture>
+            <source srcset="/_nuxt/static/burger_menu_item/indeika.png" sizes="(max-width=1439px) 233px, (max-width=1279px) 218px, 292px">
+        </picture>
     </div>
 </template>
 
@@ -79,7 +82,7 @@ export default {
                 {
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 // type: 'hot',
                 price: 'от 369Р',
                 priceOld: '469р',
@@ -91,7 +94,7 @@ export default {
                 {
                 name: 'Пепперони фреш',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 price: 'от 289Р',             
                  tag: [                    
@@ -102,7 +105,7 @@ export default {
                 {
                 name: 'Двойной цыпленок',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 // type: 'hot',
                 price: 'от 339',
                  tag: [                    
@@ -113,7 +116,7 @@ export default {
                 {
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 // type: 'hot',
                 price: 'от 469Р',
                 position: 'last',
@@ -125,7 +128,7 @@ export default {
                 {
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'new',
                 price: 'от 469Р',
                  tag: [                    
@@ -136,7 +139,7 @@ export default {
                 {
                 name: 'Пепперони фреш',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: 'от 289Р',
@@ -162,7 +165,7 @@ export default {
                 {
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: 'от 559Р',
@@ -174,7 +177,7 @@ export default {
                 {
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: 'от 559Р',
@@ -186,7 +189,7 @@ export default {
                 {
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: 'от 559Р',
@@ -198,7 +201,7 @@ export default {
                 {
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/indeika.png', 
+                image:'/_nuxt/static/burger_menu_item/indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: 'от 559Р',
