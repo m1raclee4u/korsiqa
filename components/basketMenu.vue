@@ -1,10 +1,10 @@
 <template>
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
-        <div class="basket__slider">
-            <BasketMenuSlide/>
-            <!-- <BasketMenuSlide/> -->
-            <!-- <BasketMenuSlide/> -->
+        <div class="swiper-container basket__slider">
+            <div class="swiper-wrapper" style="">
+                 <basketItem v-for="item in items" :basketItem="item" :key="item.message"></basketItem>
+            </div>                    
         </div>
         
         <footer class="basket__footer">
@@ -20,13 +20,49 @@
 </template>
 
 <script>
+import basketItem from './basketMenuItem.vue'
+
+import Swiper, { Navigation, Pagination } from 'swiper'
+import 'swiper/swiper-bundle.css'
+
+// Swiper.use([ Navigation, Pagination ])
+
 export default {
+    mounted() {
+    new Swiper('.basket__slider', {
+    //   loop: false,
+      slidesPerView: 3,
+      spaceBetween: 15,
+      direction: 'vertical'     
+    })
+    },
+    data(){
+        return{
+            items: [
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' },
+                { name: '123', weight: '350г' }, 
+            ]
+        }
+    },
     
+    components: {
+        basketItem
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 .basket__menu{
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
     position: relative;
     top: 15px;
     left: 0px;
@@ -36,6 +72,7 @@ export default {
     // min-height: 500px;
     height: max-content;
     width: 270px;
+    border-radius: 3px;
     background-color: #fff;
         h1{
             font-weight: 500;
@@ -48,8 +85,12 @@ export default {
         }
 }
 .basket__slider{
+    width: 100%;
     min-height: 120px;
-    max-height: 360px;
+    max-height: 360px;       
+}
+.swiper-wrapper{
+    border: none;            
 }
 .basket__footer{
     display: flex;

@@ -11,8 +11,8 @@
 
 <style>
 .swiper-container{
-    overflow: hidden;
-    height: 300px;    
+    /* overflow: hidden; */
+    /* height: 300px;     */
 }
 .newsSlider{
     margin-bottom: 100px;

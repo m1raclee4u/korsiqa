@@ -1,11 +1,9 @@
 <template>
     <div class="oneBasketItem">
         <div class="basketInfo__left">
-            <div class="basketItem__info">
-                <!-- {{item.name}} -->
-                <h1>Индейка в мандаринах</h1>
-                <!-- {{item.weight}} -->
-                <span>350 гр</span>
+            <div class="basketItem__info">                
+                <h1>{{basketItem.name}}</h1>                
+                <span>{{basketItem.weight}}</span>
             </div>
             <p>- 1 +</p>
         </div>
@@ -20,7 +18,10 @@
 
 <script>
 export default {
-    
+    name: "basketItem",
+    props: [
+        "basketItem",
+    ]
 }
 </script>
 
@@ -39,6 +40,7 @@ export default {
     height: 70px;
     padding: 25px 20px 25px 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+        
 }
 .basketInfo__left{
     display: flex;

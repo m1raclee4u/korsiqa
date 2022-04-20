@@ -25,16 +25,18 @@
                             Войти
                         </button>
                         <div class="basket">
-                            <button class="header__basket">
-                                <NuxtLink to="/basket">Корзина</NuxtLink>
+                            <button class="header__basket" @click="isVisibleBasket = !isVisibleBasket">
+                                Корзина
                             </button>
                         </div>
-
                     </div>
                     
                 </div>                
             </div>
-            <!-- <BasketMenu/> -->
+            <transition name="slide-fade">
+                 <BasketMenu v-show="isVisibleBasket" />
+            </transition>
+           
 
         </div>
     </header>
@@ -44,7 +46,8 @@
 import navBar from './menuNavigation.vue'
 export default {
   data(){
-        return{
+        return{                 
+            isVisibleBasket: false,    
             items: [
                 { message: 'Бургеры'},
                 { message: 'Закуски'},
@@ -59,6 +62,12 @@ export default {
     components: {
         navBar
     },
+    name: 'Basket',
+    methods: {
+        closeBasket() {
+    //   this.$emit('close');
+    },
+    }
 
 }
 </script>
@@ -129,7 +138,7 @@ a {
     font-size: 14px;
 }
 .header{
-    width: 1920px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     position: sticky;
@@ -163,6 +172,7 @@ a {
         h1{
             font-weight: 800;
             letter-spacing: 2px;
+            color: white;
         }
 }
 .header__info{

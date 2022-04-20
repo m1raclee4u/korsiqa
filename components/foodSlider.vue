@@ -97,6 +97,7 @@ export default {
         font-weight: 400;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         line-height: 80px;
+        color: white;
     }
     .swiper-container{
         height: 435px;
