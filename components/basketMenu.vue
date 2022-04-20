@@ -60,7 +60,7 @@ export default {
     flex-direction: column;
     // min-height: 500px;
     height: max-content;
-    width: 270px;
+    width: 300px;
     border-radius: 3px;
     background-color: #fff;
     z-index: 110;
