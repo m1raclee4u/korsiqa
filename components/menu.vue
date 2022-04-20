@@ -9,12 +9,8 @@
         <div class="all_items">
             <div v-for="item in menuItems"  :key="item.message">
                 <menuItem :menuItem="item"  v-if="selected==='Все'||item.tag.indexOf(selected)!==-1"></menuItem>
-            </div>
-            
+            </div>            
         </div>
-         <picture>
-            <source srcset="/_nuxt/static/burger_menu_item/indeika.png" sizes="(max-width=1439px) 233px, (max-width=1279px) 218px, 292px">
-        </picture>
     </div>
 </template>
 

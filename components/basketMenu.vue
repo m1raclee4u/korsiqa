@@ -1,10 +1,8 @@
 <template>
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
-        <div class="swiper-container basket__slider">
-            <div class="swiper-wrapper" style="">
-                 <basketItem v-for="item in items" :basketItem="item" :key="item.message"></basketItem>
-            </div>                    
+        <div class="basket__slider">
+            <basketItem v-for="item in items" :basketItem="item" :key="item.message"></basketItem>                 
         </div>
         
         <footer class="basket__footer">
@@ -22,31 +20,18 @@
 <script>
 import basketItem from './basketMenuItem.vue'
 
-import Swiper, { Navigation, Pagination } from 'swiper'
-import 'swiper/swiper-bundle.css'
-
 // Swiper.use([ Navigation, Pagination ])
 
 export default {
-    mounted() {
-    new Swiper('.basket__slider', {
-    //   loop: false,
-      slidesPerView: 3,
-      spaceBetween: 15,
-      direction: 'vertical'     
-    })
-    },
     data(){
         return{
             items: [
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' },
-                { name: '123', weight: '350г' }, 
+                { name: 'Индейка в мандаринах', weight: '350г' },
+                { name: 'Карбонара', weight: '350г' },
+                { name: 'Индейка в мандаринах', weight: '350г' },
+                { name: 'Карбонара', weight: '350г' },
+                { name: 'Индейка в мандаринах', weight: '350г' },
+                { name: 'Карбонара', weight: '350г' },                
             ]
         }
     },
@@ -58,7 +43,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.basket__menu{
+.blackout{
+    width: 100vh;
+    height: 100vh;
+}
+.basket__menu{    
     -moz-user-select: none; 
     -webkit-user-select: none; 
     -ms-user-select: none; 
@@ -74,6 +63,7 @@ export default {
     width: 270px;
     border-radius: 3px;
     background-color: #fff;
+    z-index: 110;
         h1{
             font-weight: 500;
             font-size: 15px;
@@ -85,9 +75,9 @@ export default {
         }
 }
 .basket__slider{
+    overflow-y: auto;
     width: 100%;
-    min-height: 120px;
-    max-height: 360px;       
+    height: 360px;  
 }
 .swiper-wrapper{
     border: none;            
@@ -98,8 +88,8 @@ export default {
     justify-content: center;
     
     height: 145px;
-    // border-top: 1px solid rgba(128, 128, 128, 0.288);
-    padding: 5px 20px 5px 20px;
+    border-top: 1px solid rgba(128, 128, 128, 0.288);
+    padding: 0px 20px 0px 20px;
 }
 .footer__price{
     display: flex;

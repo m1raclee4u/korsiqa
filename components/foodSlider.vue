@@ -25,10 +25,10 @@
 <script>
 import oneSlide from './oneSlide.vue'
 
-import Swiper, { Navigation, Pagination } from 'swiper'
+import Swiper, { Navigation, Pagination, EffectCoverflow } from 'swiper'
 import 'swiper/swiper-bundle.css'
 
-Swiper.use([ Navigation, Pagination ])
+Swiper.use([ Navigation, Pagination, EffectCoverflow ])
 
 export default {
      mounted() {
@@ -38,6 +38,12 @@ export default {
       // loop: true,
       slidesPerView: 1,
       spaceBetween: 30,
+      effect: 'coverflow',
+      coverflowEffect: {
+          modifier: 1,
+          slideShadows: false
+      },
+      grabCursor: true,      
       pagination: {
       el: '.swiper-pagination',
       },
@@ -46,6 +52,13 @@ export default {
     data(){
         return{
             items: [
+                { 
+                name: 'Вкусняшка',
+                info: '30см, 500г',
+                text: 'huy', 
+                image: '/_nuxt/static/burger__slide_one.png',
+                price: '599P',
+                },
                 { 
                 name: 'Вкусняшка',
                 info: '30см, 500г',

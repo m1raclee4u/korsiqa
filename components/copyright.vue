@@ -21,7 +21,7 @@
 <style lang="scss">
 .copyright_section{
     display: flex;
-    width: 1333px;
+    width: 1280px;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;

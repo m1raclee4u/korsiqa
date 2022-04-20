@@ -74,7 +74,7 @@ export default {
         align-items: flex-start;
         flex-direction: row;
         justify-content: center;    
-        width: 631px;
+        width: 613px;
         height: 450px;
         margin: 0 30px 60px 0; 
             p{
@@ -165,9 +165,10 @@ export default {
         flex-direction: column;
         align-content: center;
         justify-content: space-between;    
+        // background-color: wheat;
         width: 280px;
         height: 476px;
-        margin: 0 71px 60px 0;
+        margin: 0 53.333333px 60px 0;
             &.hot{
                 background-image: url(@/static/burger_menu_item/fire.png);
                 background-repeat: no-repeat;
@@ -181,7 +182,9 @@ export default {
                 padding: 0 15px 15px 15px;
                 color: black;
                 z-index: 1;
-            }
+            }           
+      
+            
             
     }
     .fire{
@@ -212,7 +215,13 @@ export default {
     .menu__item__back{
         width: 100%;
         height: 190px;
-                
+        :-moz-focusring{
+                padding: 10px;
+                transition: all .5s ease;
+                transform: 10px;
+                opacity: 0;
+            }
+        
     }
     .menu__item__info{
         display: flex;

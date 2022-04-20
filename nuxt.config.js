@@ -47,6 +47,11 @@ export default {
     baseURL: '/',
   },
 
+  server: {
+    host: '192.168.1.16',
+    port: 8000,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],

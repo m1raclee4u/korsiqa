@@ -44,11 +44,13 @@ export default {
 }
 .basketInfo__left{
     display: flex;
+    height: 70px;
     flex-direction: column;
     justify-content: space-between;
 }
 .basketInfo__right{
     display: flex;
+    height: 70px;
     flex-direction: column;
     justify-content: space-between;
         span{

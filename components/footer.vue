@@ -77,6 +77,7 @@
     font-weight: 500;
 }
 .footer__title{
+    color: white;
     font-weight: 300;
     letter-spacing: 1px;
     font-size: 12px;

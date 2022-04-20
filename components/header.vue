@@ -25,7 +25,7 @@
                             Войти
                         </button>
                         <div class="basket">
-                            <button class="header__basket" @click="isVisibleBasket = !isVisibleBasket">
+                            <button class="header__basket" @click="$store.commit('changeBasket', !$store.state.isVisibleBasket)">
                                 Корзина
                             </button>
                         </div>
@@ -34,7 +34,7 @@
                 </div>                
             </div>
             <transition name="slide-fade">
-                 <BasketMenu v-show="isVisibleBasket" />
+                 <BasketMenu v-show="$store.state.isVisibleBasket" />
             </transition>
            
 
@@ -46,8 +46,7 @@
 import navBar from './menuNavigation.vue'
 export default {
   data(){
-        return{                 
-            isVisibleBasket: false,    
+        return{                   
             items: [
                 { message: 'Бургеры'},
                 { message: 'Закуски'},
@@ -79,7 +78,7 @@ export default {
         height: 130px;
         display: flex;
         flex-direction: column;
-        width: 1333px;
+        width: 1280px;
         margin-right: auto;
         margin-left: auto;
     }
@@ -90,6 +89,7 @@ export default {
     }
 
     .basket{
+        z-index: 110;
         display: flex;
         flex-direction: column;
     }
