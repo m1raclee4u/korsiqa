@@ -8,7 +8,7 @@
             <p>- 1 +</p>
         </div>
         <div class="basketInfo__right">
-            <button class="close">
+            <button class="close" @click="$store.commit('basketCountDecrement')">
                 X
             </button>
             <span>12228 P</span>            

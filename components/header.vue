@@ -29,15 +29,12 @@
                                 Корзина
                             </button>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>                
             </div>
             <transition name="slide-fade">
-                 <BasketMenu v-show="$store.state.isVisibleBasket" />
+                <BasketMenu v-show="$store.state.isVisibleBasket" />
             </transition>
-           
-
         </div>
     </header>
 </template>
@@ -141,7 +138,7 @@ a {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    position: sticky;
+    position: fixed;
     top: 0px;
     // TODO от скролла менять z-index:  и высоту;
     z-index: 100;

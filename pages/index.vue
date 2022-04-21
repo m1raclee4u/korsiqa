@@ -21,26 +21,27 @@ export default {
 </script>
 
 <style>
+
 .blackout{
- width: 100%;
- height: 100%;
- position: absolute;
- background-color: rgb(0, 0, 0);
- z-index: 90;
- opacity: 0.5;
- cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* background-color: rgb(0, 0, 0); */
+  z-index: 90;
+  opacity: 0;
+  cursor: pointer;
 }
 
 
 .slide-fade-enter-active {
-      transition: all .5s ease;
+      transition: all .7s ease;
     }
     .slide-fade-leave-active {
-      transition: all .5s ease;
+      transition: all .7s ease;
     }
     .slide-fade-enter, .slide-fade-leave-to
     /* .slide-fade-leave-active до версии 2.1.8 */ {
-      transform: translateX(50px);
+      transform: translateX(300px);
       opacity: 0;
     }
 

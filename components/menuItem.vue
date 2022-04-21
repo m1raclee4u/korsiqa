@@ -42,7 +42,7 @@
                                 <h5>{{menuItem.price}}</h5>
                                 <h3>{{menuItem.priceOld}}</h3>
                             </div>                            
-                            <button class="buy">
+                            <button class="buy" @click="$store.commit('basketCountIncrement')">
                                 <span>Выбрать</span>                
                             </button>  
                         </div>         

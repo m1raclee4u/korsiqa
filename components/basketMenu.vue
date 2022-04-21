@@ -1,16 +1,28 @@
 <template>
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
-        <div class="basket__slider">
+        <div class="basket__slider" v-if="$store.state.backetCount > 0">
             <basketItem v-for="item in basketItems" :basketItem="item" :key="item.message"></basketItem>                 
         </div>
         
-        <footer class="basket__footer">
+        <div class="basket__empty" v-if="$store.state.backetCount === 0">
+            <img src="https://dodopizza-a.akamaihd.net/site-static/dist/121df529925b0f43cc73.svg" alt="">
+            <h3>Ой пусто</h3>
+            <span>Ваша корзина пуста, откройте «Меню»
+            и выберите понравившийся товар. </br>
+            Мы доставим ваш заказ от 649 ₽</span>
+            <button @click="$store.commit('changeBasket', !$store.state.isVisibleBasket)">
+                <!-- <NuxtLink to="/">Вернутся в меню</NuxtLink>                 -->
+                Вернутся в меню
+            </button>
+        </div>
+
+        <footer class="basket__footer" v-if="$store.state.backetCount > 0">
             <div class="footer__price">
                 <h2>Итого</h2>
                 <span>1992 Р</span>
             </div>            
-            <button class="basket__buy">
+            <button class="basket__buy" v-if="$store.state.backetCount > 0">
                 Оформить покупку
             </button>
         </footer>
@@ -43,6 +55,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.basket__empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    height: 400px;
+        img{
+            margin-bottom: 25px;
+        }
+        h3{
+            font-size: 20px;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        span{
+            font-size: 13px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        button{
+            padding: 10px 25px;
+            background-color: orangered;
+            color: white;
+        }
+
+}
+
 .blackout{
     width: 100vh;
     height: 100vh;
@@ -54,12 +94,12 @@ export default {
     user-select: none;
     position: relative;
     top: 15px;
-    left: 0px;
+    right: 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    // min-height: 500px;
-    height: max-content;
+    min-height: 500px;
+    // height: max-content;
     width: 300px;
     border-radius: 3px;
     background-color: #fff;
