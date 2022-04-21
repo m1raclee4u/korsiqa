@@ -2,7 +2,7 @@
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
         <div class="basket__slider">
-            <basketItem v-for="item in items" :basketItem="item" :key="item.message"></basketItem>                 
+            <basketItem v-for="item in basketItems" :basketItem="item" :key="item.message"></basketItem>                 
         </div>
         
         <footer class="basket__footer">
@@ -25,7 +25,7 @@ import basketItem from './basketMenuItem.vue'
 export default {
     data(){
         return{
-            items: [
+            basketItems: [
                 { name: 'Индейка в мандаринах', weight: '350г' },
                 { name: 'Карбонара', weight: '350г' },
                 { name: 'Индейка в мандаринах', weight: '350г' },
