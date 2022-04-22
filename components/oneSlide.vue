@@ -6,13 +6,13 @@
            <h5>{{product.price}}</h5>
        </div>
    
-       <img :src="product.image" alt="Burger" class="back__one__slide">
+       <img :src="require('../static/' + product.image)" alt="Burger" class="back__one__slide">
    </div>
 </template>
 
 <script>
 export default {
-    name: "test",
+    name: "foodSlide",
     props: [
         "product",
     ]

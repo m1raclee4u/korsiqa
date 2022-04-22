@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "test",
+    name: "newsSlide",
     props: [
         "news"
     ]

@@ -25,7 +25,7 @@
                             Войти
                         </button>
                         <div class="basket">
-                            <button class="header__basket" @click="$store.commit('changeBasket', !$store.state.isVisibleBasket)">
+                            <button class="header__basket" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                                 Корзина
                             </button>
                         </div>

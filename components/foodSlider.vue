@@ -56,14 +56,14 @@ export default {
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: 'burger__slide_one.png',
                 price: '599P',
                 },
                 { 
                 name: 'Вкусняшка',
                 info: '30см, 500г',
                 text: 'huy', 
-                image: '/_nuxt/static/burger__slide_one.png',
+                image: 'burger__slide_one.png',
                 price: '599P',
                 },
             ]

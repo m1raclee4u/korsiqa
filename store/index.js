@@ -1,19 +1,13 @@
 export const state = () => ({
     isVisibleBasket: false,
     backetCount: 0,
-    basketItems: [
-        { name: 'Индейка в мандаринах', weight: '350г' },
-        { name: 'Карбонара', weight: '350г' },
-        { name: 'Индейка в мандаринах', weight: '350г' },
-        { name: 'Карбонара', weight: '350г' },
-        { name: 'Индейка в мандаринах', weight: '350г' },
-        { name: 'Карбонара', weight: '350г' },                
-    ],
+    menuItems: [],
+    basketItems: [],
     
   })
   
   export const mutations = {
-    basketCounе(state, count){
+    basketCount(state, count){
       state.backetCount=count
     },
     basketCountIncrement(state){
@@ -21,8 +15,8 @@ export const state = () => ({
     },
     basketCountDecrement(state){
       state.backetCount--
-  },
-    changeBasket(state, basket) {
+    },
+    openBasket(state, basket) {
         state.isVisibleBasket=basket
     }
   }

@@ -42,25 +42,25 @@ export default {
                 {
                 name: 'Картошка фри',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/fries.png', 
+                image:'fries.png', 
                 price: 'от 559Р'
                 },
                 {
                 name: 'Сырные палочки',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/fries.png', 
+                image:'fries.png', 
                 price: 'от 559Р'
                 },
                 {
                 name: 'Куриные наггетсы',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/fries.png', 
+                image:'fries.png', 
                 price: 'от 559Р'
                 },
                 {
                 name: 'Индейка в маринаде',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-                image:'@/static/burger_menu_item/fries.png', 
+                image:'fries.png', 
                 price: 'от 559Р',
                 position: 'last'
                 }

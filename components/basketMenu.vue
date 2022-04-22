@@ -11,7 +11,7 @@
             <span>Ваша корзина пуста, откройте «Меню»
             и выберите понравившийся товар. </br>
             Мы доставим ваш заказ от 649 ₽</span>
-            <button @click="$store.commit('changeBasket', !$store.state.isVisibleBasket)">
+            <button @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                 <!-- <NuxtLink to="/">Вернутся в меню</NuxtLink>                 -->
                 Вернутся в меню
             </button>

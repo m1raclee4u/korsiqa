@@ -11,16 +11,16 @@
                             <span>{{menuItem.info}}</span>
                             <div class="menu__item__big__buy">
                                 <div class="menu__item__big__price">
-                                    <h5>{{menuItem.price}}</h5>
-                                    <h3>{{menuItem.priceOld}}</h3>
+                                    <h5>от {{menuItem.price}} ₽</h5>
+                                    <h3>{{menuItem.priceOld}} ₽</h3>
                                 </div>
-                                <button class="buy">
+                                <button class="buy" @click="sendDataToParent">
                                     <span>Выбрать</span>                
                                 </button>           
                             </div>
                         </div>   
                 </div>
-                <img class="back_item_big" :src="menuItem.image" alt="" >
+                <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + menuItem.image)" alt="" >
             </div>
         </div>
         <div v-else>
@@ -30,7 +30,7 @@
                         <span v-if="menuItem.type==='superhit'">суперхит</span>
                         <span v-if="menuItem.type==='hot'">оссстрый</span>
                     </div>  
-                <img :src="menuItem.image" alt="" class="menu__item__back">
+                <img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back">
                 <div class="menu__item__info">
                     <div class="menu__item__header">
                         <h1>{{menuItem.name}}</h1> 
@@ -39,10 +39,10 @@
                         <span>{{menuItem.info}}</span>   
                         <div class="menu__item__price">
                             <div class="prices">
-                                <h5>{{menuItem.price}}</h5>
-                                <h3>{{menuItem.priceOld}}</h3>
+                                <h5>от {{menuItem.price}} ₽</h5>
+                                <h3>{{menuItem.priceOld}} ₽</h3>
                             </div>                            
-                            <button class="buy" @click="$store.commit('basketCountIncrement')">
+                            <button class="buy" @click="sendDataToParent">
                                 <span>Выбрать</span>                
                             </button>  
                         </div>         
@@ -56,10 +56,16 @@
 
 <script>
 export default {
-    name: "test",
+    name: "menuItem",
     props: [
         "menuItem"
-    ]
+    ],  
+    methods: {
+        sendDataToParent (){
+            this.$emit('sendArticle', this.menuItem.id)
+        }
+    }
+    
 }
 </script>
 
