@@ -26,11 +26,11 @@
         <div v-else>
             <div :class="{last__element: menuItem.position==='last', menu__item: true, hot: menuItem.type==='hot'}">     
                 <div :class="{menu__item__tag: true, new: menuItem.type==='new', superhit: menuItem.type==='superhit', hot: menuItem.type==='hot'}">
-                        <span v-if="menuItem.type==='new'">новинка</span>
-                        <span v-if="menuItem.type==='superhit'">суперхит</span>
-                        <span v-if="menuItem.type==='hot'">оссстрый</span>
-                    </div>  
-                <img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back">
+                    <span v-if="menuItem.type==='new'">новинка</span>
+                    <span v-if="menuItem.type==='superhit'">суперхит</span>
+                    <span v-if="menuItem.type==='hot'">оссстрый</span>
+                </div>
+                <Nuxt-link to="/oneItemPage"><img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back"></Nuxt-link>   
                 <div class="menu__item__info">
                     <div class="menu__item__header">
                         <h1>{{menuItem.name}}</h1> 
@@ -43,7 +43,8 @@
                                 <h3>{{menuItem.priceOld}} ₽</h3>
                             </div>                            
                             <button class="buy" @click="sendDataToParent">
-                                <span>Выбрать</span>                
+                            <!-- <button class="buy" @click="addToCart(menuItem)"> -->
+                                <span>Выбрать</span>              
                             </button>  
                         </div>         
                     </div>
@@ -61,8 +62,11 @@ export default {
         "menuItem"
     ],  
     methods: {
+        // addToCart(menuItem) {
+        //     this.$store.commit('addToCart', menuItem);
+        // },
         sendDataToParent (){
-            this.$emit('sendArticle', this.menuItem.id)
+            this.$emit('sendArticle', this.menuItem)
         }
     }
     

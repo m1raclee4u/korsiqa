@@ -18,7 +18,7 @@
                     </ul>
                     <div class="header__info">
                         <a class="header__call" href="tel:+228332">8 800 555 35 35</a>
-                        <h class="call__subtitle">Работаем с 08:00 до 22:00</h>
+                        <h1 class="call__subtitle">Работаем с 08:00 до 22:00</h1>
                     </div>
                     <div class="header__buttons">
                         <button class="header__login">
@@ -60,9 +60,6 @@ export default {
     },
     name: 'Basket',
     methods: {
-        closeBasket() {
-    //   this.$emit('close');
-    },
     }
 
 }
@@ -145,11 +142,11 @@ a {
     display: flex;
     align-content: center;
     height: 130px;
-    background-color: rgb(19, 19, 19);
-    border-bottom: 1px solid rgb(55, 55, 55);
+    // background-color: rgb(19, 19, 19);
+    // border-bottom: 1px solid rgb(55, 55, 55);
     margin-bottom: 130px;
-    background-image: url(../static/back.jpg);
-    background-size: 1920px;
+    background-image: url(../static/back.png);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }

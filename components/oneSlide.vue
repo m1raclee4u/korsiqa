@@ -22,12 +22,12 @@ export default {
 <style lang="scss">
     .slide{              
         position: relative; 
-        right: -30px;
+        // right: -30px;
         // background: gray;     
         display: flex;
         align-items: flex-start;
         justify-content: center;    
-        width: 700px;
+        width: 653px;
         height: 435px;
             p{
                 width: 200px;

@@ -2,9 +2,6 @@
   "BasketMenu": {
     "description": "Auto imported from components/basketMenu.vue"
   },
-  "BasketMenuItem": {
-    "description": "Auto imported from components/basketMenuItem.vue"
-  },
   "Copyright": {
     "description": "Auto imported from components/copyright.vue"
   },
@@ -26,14 +23,14 @@
   "MenuItem": {
     "description": "Auto imported from components/menuItem.vue"
   },
-  "MenuItemsBig": {
-    "description": "Auto imported from components/menuItemsBig.vue"
-  },
   "MenuNavigation": {
     "description": "Auto imported from components/menuNavigation.vue"
   },
   "NewsSlider": {
     "description": "Auto imported from components/newsSlider.vue"
+  },
+  "OneItemPageItem": {
+    "description": "Auto imported from components/oneItemPage-Item.vue"
   },
   "OneNews": {
     "description": "Auto imported from components/oneNews.vue"

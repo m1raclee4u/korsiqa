@@ -11,10 +11,10 @@
         </ul>
         <div class="all_items">
             
-            <div v-for="menuItem in menuItems">
+            <div v-for="menuItem in menuItems" :key="menuItem.id">                
                 <menuItem :menuItem="menuItem" 
                     :key="menuItem.id" 
-                    @sendArticle="showChildArticleInConsole"  
+                    @sendArticle="addToCart"  
                     v-if="selected==='Все'||menuItem.tag.indexOf(selected)!==-1">
                 </menuItem>
             </div>            
@@ -43,13 +43,14 @@ export default {
             ],
             menuItems: [
                 {
-                id: '1',
-                inCart: false,
+                id: 'pizza_1',
+                quantity: '1',
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 // type: 'hot',
                 price: '369',
+                weight: '228',
                 priceOld: '469',
                  tag: [                    
                     'Мясные',
@@ -57,39 +58,42 @@ export default {
                 ]
                 },
                 {
-                id: '2',
-                inCart: false,
+                id: 'pizza_2',
+                quantity: '1',
                 name: 'Пепперони фреш',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
-                price: '289',             
+                price: '289',
+                weight: '228',             
                  tag: [                    
                     'Мясные',
                     'Вегетарианские'
                 ]
                 },
                 {
-                id: '3',
-                inCart: false,
+                id: 'pizza_3',
+                quantity: '1',
                 name: 'Двойной цыпленок',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 // type: 'hot',
                 price: '339',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Вегетарианские'
                 ]
                 },
                 {
-                id: '4',
-                inCart: false,
+                id: 'pizza_4',
+                quantity: '1',
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 // type: 'hot',
                 price: '469',
+                weight: '228',
                 position: 'last',
                  tag: [                    
                     'Мясные',
@@ -97,41 +101,44 @@ export default {
                 ]
                 },
                 {
-                id: '5',
-                inCart: false,
+                id: 'pizza_5',
+                quantity: '1',
                 name: 'Индейка в мандаринах',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'new',
                 price: '469',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Вегетарианские'
                 ]
                 },
                 {
-                id: '6',
-                inCart: false,
+                id: 'pizza_6',
+                quantity: '1',
                 name: 'Пепперони фреш',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: '289',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Вегетарианские'
                 ]
                 },
                 {
-                id: '7',
-                inCart: false,
+                id: 'pizza_7',
+                quantity: '1',
                 name: 'Вкусняшка 7',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'menuItemBig.png',
                 type: 'hot',
                 size: 'big',
                 price: '559',
+                weight: '228',
                 priceOld: '540',
                 position: 'last',
                  tag: [                    
@@ -140,56 +147,60 @@ export default {
                 ]
                 },
                 {
-                id: '8',
-                inCart: false,
+                id: 'pizza_8',
+                quantity: '1',
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: '559',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Вегетарианские'
                 ]
                 },
                 {
-                id: '9',
-                inCart: false,
+                id: 'pizza_9',
+                quantity: '1',
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: '559',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Акция'
                 ]
                 },
                 {
-                id: '10',
-                inCart: false,
+                id: 'pizza_10',
+                quantity: '1',
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: '559',
+                weight: '228',
                  tag: [                    
                     'Мясные',
                     'Гриль'
                 ]
                 },
                 {
-                id: '11',
-                inCart: false,
+                id: 'pizza_11',
+                quantity: '1',
                 name: 'Вкусняшка 5',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
                 image:'indeika.png', 
                 type: 'hot',
                 // size: 'big',
                 price: '559',
+                weight: '228',
                 position: 'last',
                  tag: [                    
                     'Закрытые',
@@ -206,8 +217,8 @@ export default {
         menuItem
     },
     methods: {
-        showChildArticleInConsole(data){
-            console.log(data)
+        addToCart(data){
+            this.$store.commit('addToCart', data);
         },
     }
 }
@@ -228,7 +239,7 @@ export default {
             &.selected{
                 background: orangered;
                 border-radius: 3px;
-                padding: 12px 17px;
+                padding: 12px 12px;
                 color: white;
             }
         }
@@ -252,7 +263,7 @@ export default {
             li{
                 display: inline;
                 font-size: 15px;
-                margin: 0 15px 75px 0;
+                margin: 0 25px 75px 0;
             }
     }
 </style>

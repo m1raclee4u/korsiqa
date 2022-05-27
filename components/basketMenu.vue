@@ -1,15 +1,34 @@
 <template>
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
-        <div class="basket__slider" v-if="$store.state.backetCount > 0">
-            <basketItem v-for="item in basketItems" :basketItem="item" :key="item.message"></basketItem>                 
+        <div class="basket__slider" v-if="$store.state.cartCount > 0">
+            <div v-for="menuItem in $store.state.cart" :key="menuItem.id">
+                <div class="oneBasketItem">
+                    <div class="oneBasketItemBasketInfo__left">
+                        <div class="oneBasketItemBasketItem__info">                
+                            <h2>{{menuItem.name}}</h2>                
+                            <span>{{menuItem.weight}} г</span>
+                        </div>
+                        <p> <button @click="$store.commit('quantityDecremnent')">-</button>
+                            {{menuItem.quantity}} 
+                            <button>+</button>
+                        </p>
+                    </div>
+                    <div class="oneBasketItemBasketInfo__right">
+                        <button class="oneBasketItemClose">
+                            X
+                        </button>
+                        <span>{{menuItem.totalPrice}} Р</span>            
+                    </div>
+                 </div>
+            </div>                 
         </div>
         
-        <div class="basket__empty" v-if="$store.state.backetCount === 0">
+        <div class="basket__empty" v-if="$store.state.cartCount === 0">
             <img src="https://dodopizza-a.akamaihd.net/site-static/dist/121df529925b0f43cc73.svg" alt="">
             <h3>Ой пусто</h3>
             <span>Ваша корзина пуста, откройте «Меню»
-            и выберите понравившийся товар. </br>
+            и выберите понравившийся товар.<br>
             Мы доставим ваш заказ от 649 ₽</span>
             <button @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                 <!-- <NuxtLink to="/">Вернутся в меню</NuxtLink>                 -->
@@ -17,44 +36,70 @@
             </button>
         </div>
 
-        <footer class="basket__footer" v-if="$store.state.backetCount > 0">
+        <footer class="basket__footer" v-if="$store.state.cartCount > 0">
             <div class="footer__price">
                 <h2>Итого</h2>
-                <span>1992 Р</span>
+                <span>{{$store.state.cart.totalPrice}}Р</span>
             </div>            
-            <button class="basket__buy" v-if="$store.state.backetCount > 0">
-                Оформить покупку
+            <button class="basket__buy" v-if="$store.state.cartCount > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
+                <nuxt-link to="/cart" >Оформить покупку</nuxt-link>
             </button>
         </footer>
     </div>
 </template>
 
 <script>
-import basketItem from './basketMenuItem.vue'
-
-// Swiper.use([ Navigation, Pagination ])
-
-export default {
-    data(){
-        return{
-            basketItems: [
-                { name: 'Индейка в мандаринах', weight: '350г' },
-                { name: 'Карбонара', weight: '350г' },
-                { name: 'Индейка в мандаринах', weight: '350г' },
-                { name: 'Карбонара', weight: '350г' },
-                { name: 'Индейка в мандаринах', weight: '350г' },
-                { name: 'Карбонара', weight: '350г' },                
-            ]
-        }
-    },
-    
-    components: {
-        basketItem
-    }
-}
 </script>
 
 <style lang="scss" scoped>
+.oneBasketItemClose{
+    font-size: 15px;
+    font-weight: bold;
+    color: grey;
+    background-color: inherit;
+    text-align: right;
+    padding: 0;
+}
+.oneBasketItem{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    padding: 25px 20px 25px 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+        
+}
+.oneBasketItemBasketInfo__left{
+    display: flex;
+    height: 70px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.oneBasketItemBasketInfo__right{
+    display: flex;
+    height: 70px;
+    flex-direction: column;
+    justify-content: space-between;
+        span{
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+}
+.oneBasketItemBasketItem__info{
+    h2{
+        font-size: 15px;
+        font-weight: 00;
+        color: black;
+        border-bottom: none !important;
+    }
+    span{
+        font-size: 11px;
+        font-weight: 400;
+        color: gray;
+    }
+
+}
+
+
 .basket__empty{
     display: flex;
     flex-direction: column;

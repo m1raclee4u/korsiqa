@@ -53,7 +53,7 @@
       /* width: 1920px; */
       margin: 0 auto;
       padding: 0;
-      background-color: #151515;
+      background-color: #010102;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     img {
@@ -75,6 +75,9 @@
       font-size: 22px;
       color: orangered;
       font-weight: 400;
+    }
+    a{
+      text-decoration: none;
     }
     
     @media (max-width: 1366px) {

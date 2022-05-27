@@ -115,12 +115,12 @@ export default {
     }
     .swiper-container{
         height: 435px;
-        width: 690px;
+        width: 653px;
         position: relative;
         margin: 0;
     }
     .light{
         // position: absolute;
-        filter: drop-shadow(0 0 120px #ffd46866);
+        filter: drop-shadow(0 0 350px #fcd65bc2);
     }
 </style>
