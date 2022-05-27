@@ -266,4 +266,19 @@ export default {
                 margin: 0 25px 75px 0;
             }
     }
+
+// ------------------------------media
+
+ @media screen and (min-width: 768px) and (max-width:1279px) {
+     .left{
+         display: none;
+     }
+ }
+
+
+
+
+
+
+
 </style>

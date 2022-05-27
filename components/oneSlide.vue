@@ -68,4 +68,15 @@ export default {
         filter: drop-shadow(0 15px 5px #00000066);
     }
     
+@media screen and (min-width: 768px) and (max-width:1279px) {
+    .slider_info{
+         position: relative;
+        font-size: 12px;
+     }
+     .back__one__slide{
+         width: 70%;
+     }
+}
+
+
     </style>

@@ -37,4 +37,10 @@
     margin: 0 0 25px 0;
 }
 
+  @media screen and (min-width: 768px) and (max-width:1279px) {
+      .copyright_section{
+          width: 768px;
+      }
+  }
+
 </style>

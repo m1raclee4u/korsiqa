@@ -81,7 +81,6 @@
 {
     position: relative;
     display: flex;
-    width: 1280px;
     height: 837px;
     margin-left: auto;
     margin-right: auto;
@@ -95,5 +94,21 @@
     line-height: 93px;
     // margin-bottom: 80px;
 }
+
+
+
+  @media screen and (min-width: 768px) and (max-width:1279px) {
+      .delivery__map{
+          display: none;
+      }
+  }
+
+    @media screen and (min-width: 320px) and (max-width:768px) {
+      .delivery__map{
+          display: none;
+      }
+  }
+
+
 </style>
 

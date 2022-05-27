@@ -18,6 +18,9 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
+            <button class="food_buy_laptop">
+                <span>Хочу прямо сейчас</span>
+            </button>
         </div>
     </section>
 </template>
@@ -93,7 +96,7 @@ export default {
 
 
     .main{
-        margin-top: 235px;
+        // margin-top: 235px;
         margin-bottom: 100px;
     }    
     .left{
@@ -123,4 +126,54 @@ export default {
         // position: absolute;
         filter: drop-shadow(0 0 350px #fcd65bc2);
     }
+    .food_buy_laptop{
+        display: none;
+        background-color: orangered;
+        padding: 20px 15px;
+            span{
+                color: white;
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+    }
+
+
+    // ------------------------------media
+
+ @media screen and (min-width: 768px) and (max-width:1279px) {
+     .main{
+         margin-top: 0;
+     }
+     .slogan{
+         font-size: 40px;
+         line-height: 48px;
+     }
+     .left{
+         height: 250px;
+     }
+     .food_buy_laptop{
+        //  display: block;
+         width: 100%;
+         margin-top: 100px;
+    }
+    .swiper-container{
+        height: 250px;
+        width: 470px;
+        position: relative;
+        margin: 0;
+    }
+    
+ }
+
+  @media screen and (min-width: 320px) and (max-width:767px) {
+     .left{
+         display: none;
+     }
+ }
+
+ 
+
+
+
 </style>

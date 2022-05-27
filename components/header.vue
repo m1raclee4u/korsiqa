@@ -135,7 +135,7 @@ a {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
+    position: sticky;
     top: 0px;
     // TODO от скролла менять z-index:  и высоту;
     z-index: 100;
@@ -207,6 +207,22 @@ a {
     font-size: 14px;
     cursor: pointer;
 }
+
+
+// ------------------------------media
+
+ @media screen and (min-width: 768px) and (max-width:1279px) {
+     .header{
+         margin-bottom: 20px;
+     }
+     .navbar{
+         display: none;
+     }
+     .header__links{
+         display: none;
+     }
+     
+ }
 
 
 </style>
