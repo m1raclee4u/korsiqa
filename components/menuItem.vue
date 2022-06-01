@@ -14,7 +14,7 @@
                                     <h5>от {{menuItem.price}} ₽</h5>
                                     <h3>{{menuItem.priceOld}} ₽</h3>
                                 </div>
-                                <button class="buy" @click="sendDataToParent">
+                                <button class="buy" @click="sendDataItemPage">
                                     <span>Выбрать</span>                
                                 </button>           
                             </div>
@@ -30,7 +30,7 @@
                     <span v-if="menuItem.type==='superhit'">суперхит</span>
                     <span v-if="menuItem.type==='hot'">оссстрый</span>
                 </div>
-                <Nuxt-link to="/oneItemPage"><img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back"></Nuxt-link>   
+                <Nuxt-link to="/oneItemPage" @click="sendDataItemPage"><img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back"></Nuxt-link>   
                 <div class="menu__item__info">
                     <div class="menu__item__header">
                         <h1>{{menuItem.name}}</h1> 
@@ -67,7 +67,10 @@ export default {
         // },
         sendDataToParent (){
             this.$emit('sendArticle', this.menuItem)
-        }
+        },
+        sendDataItemPage (){
+            this.$emit('sendData', this.menuItem.id)
+        },
     }
     
 }

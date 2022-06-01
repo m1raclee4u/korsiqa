@@ -135,7 +135,7 @@ a {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    position: sticky;
+    position: fixed;
     top: 0px;
     // TODO от скролла менять z-index:  и высоту;
     z-index: 100;
@@ -144,7 +144,7 @@ a {
     height: 130px;
     // background-color: rgb(19, 19, 19);
     // border-bottom: 1px solid rgb(55, 55, 55);
-    margin-bottom: 130px;
+    // margin-bottom: 130px;
     background-image: url(../static/back.png);
     background-size: cover;
     background-repeat: no-repeat;

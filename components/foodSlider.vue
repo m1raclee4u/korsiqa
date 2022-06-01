@@ -96,7 +96,7 @@ export default {
 
 
     .main{
-        // margin-top: 235px;
+        margin-top: 235px;
         margin-bottom: 100px;
     }    
     .left{

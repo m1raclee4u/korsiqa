@@ -2,14 +2,15 @@
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
         <div class="basket__slider" v-if="$store.state.cartCount > 0">
-            <div v-for="menuItem in $store.state.cart" :key="menuItem.id">
+            <div v-for="menuItem in $store.state.cart" @sendDataItemPage="addToItem" :key="menuItem.id">
                 <div class="oneBasketItem">
                     <div class="oneBasketItemBasketInfo__left">
                         <div class="oneBasketItemBasketItem__info">                
                             <h2>{{menuItem.name}}</h2>                
                             <span>{{menuItem.weight}} г</span>
                         </div>
-                        <p> <button @click="$store.commit('quantityDecremnent')">-</button>
+                        <p> 
+                            <button>-</button>
                             {{menuItem.quantity}} 
                             <button>+</button>
                         </p>
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+
 </script>
 
 <style lang="scss" scoped>
