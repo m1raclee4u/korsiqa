@@ -2,16 +2,16 @@
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
         <div class="basket__slider" v-if="$store.state.cartCount > 0">
-            <div v-for="menuItem in $store.state.cart" @sendDataItemPage="addToItem" :key="menuItem.id">
+            <div v-for="product in $store.state.cart" :key="product.id">
                 <div class="oneBasketItem">
                     <div class="oneBasketItemBasketInfo__left">
                         <div class="oneBasketItemBasketItem__info">                
-                            <h2>{{menuItem.name}}</h2>                
-                            <span>{{menuItem.weight}} г</span>
+                            <h2>{{product.name}}</h2>                
+                            <span>{{product.weight}} г</span>
                         </div>
                         <p> 
                             <button>-</button>
-                            {{menuItem.quantity}} 
+                            {{product.quantity}} 
                             <button>+</button>
                         </p>
                     </div>
@@ -19,7 +19,7 @@
                         <button class="oneBasketItemClose">
                             X
                         </button>
-                        <span>{{menuItem.totalPrice}} Р</span>            
+                        <span>{{product.totalPrice}} Р</span>            
                     </div>
                  </div>
             </div>                 

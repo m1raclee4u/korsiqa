@@ -3,13 +3,13 @@
         <div class="kostyl">
             <div class="kostyl2"></div>
             <main class="main flex">
-                <div v-for="menuItem in $store.state.menuItem" :key="menuItem.id">
+                <div v-for="product in $store.state.product" :key="product.id">
                     <div class="slider-item">
                         <img src="../static/cart/burger.png" alt="" class="govno">
                     </div>
                     <div class="oneItem-info">
                         <nav>Хлебные - крошки</nav>
-                        <h1>{{menuItem.name}}</h1>
+                        <h1>{{product.name}}</h1>
                         <h2>Курица, Лук, Перец Халапеньо, Сыр Моцарелла, 
                             Томатный соус , Соус Сладкий Чили</h2>
                         <h1>233P</h1>

@@ -20,9 +20,6 @@
   "Menu": {
     "description": "Auto imported from components/menu.vue"
   },
-  "MenuItem": {
-    "description": "Auto imported from components/menuItem.vue"
-  },
   "MenuNavigation": {
     "description": "Auto imported from components/menuNavigation.vue"
   },
@@ -37,6 +34,9 @@
   },
   "OneSlide": {
     "description": "Auto imported from components/oneSlide.vue"
+  },
+  "Product": {
+    "description": "Auto imported from components/product.vue"
   },
   "Snacks": {
     "description": "Auto imported from components/snacks.vue"

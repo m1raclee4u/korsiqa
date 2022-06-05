@@ -6,7 +6,7 @@ export const state = () => ({
   isVisibleBasket: false,
   cart: [],
   cartCount: 0,
-  menuItems: [
+  products: [
     {
     id: 'pizza_1',
     quantity: '1',
@@ -99,7 +99,7 @@ export const state = () => ({
     quantity: '1',
     name: 'Вкусняшка 7',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
-    image:'menuItemBig.png',
+    image:'productBig.png',
     type: 'hot',
     size: 'big',
     price: '559',
@@ -179,17 +179,17 @@ export const mutations = {
     openBasket(state, basket) {
       state.isVisibleBasket=basket
     },
-    addToCart(state, menuItem) {
-        let found = state.cart.find(product => product.id == menuItem.id);
+    addToCart(state, product) {
+        let found = state.cart.find(product => product.id == product.id);
         
         if (found) {
             found.quantity ++;
             found.totalPrice = found.quantity * found.price;
             console.log(found.quantity);
         } else {
-            state.cart.push(menuItem);
-            Vue.set(menuItem, 'quantity', 1);
-            Vue.set(menuItem, 'totalPrice', menuItem.price);
+            state.cart.push(product);
+            Vue.set(product, 'quantity', 1);
+            Vue.set(product, 'totalPrice', product.price);
         }        
         state.cartCount++;
         this.commit('saveCart');
@@ -197,18 +197,7 @@ export const mutations = {
     saveCart(state) {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));
       window.localStorage.setItem('cartCount', state.cartCount);
-    },
-    quantityIncrement(state, menuItem) {
-      let found = state.cart.find(product => product.id == menuItem.id);
-      
-      if (found) {
-        found.quantity ++;
-      }
-      
-    },
-    quantityDecrement(cart) {
-      cart.quantity++;
-    },
+    },    
     
     }
 
@@ -229,9 +218,9 @@ export const getters = {
 //   },
 
 //   mutations: {
-//       addToCart(state, menuItem) {
-//         state.cart.push(menuItem);
-//         console.log(menuItem.name);
+//       addToCart(state, product) {
+//         state.cart.push(product);
+//         console.log(product.name);
 //         state.cartCount++;
 //       },       
 //       openBasket(state, basket) {

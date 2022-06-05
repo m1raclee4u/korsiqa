@@ -5,7 +5,7 @@
                 Закуски и снэки
             </h1>
             <div class="snacks__slider">
-                 <menuItem v-for="item in menuItems" :menuItem="item" :key="item.message"></menuItem>
+                 <product v-for="item in products" :product="item" :key="item.message"></product>
             </div>
         </div>
     </section>
@@ -34,11 +34,11 @@
 </style>
 
 <script>
-import menuItem from './menuItem.vue'
+import product from './product.vue'
 export default {
     data(){
         return{
-            menuItems: [
+            products: [
                 {
                 name: 'Картошка фри',
                 info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -69,7 +69,7 @@ export default {
         }
     },
     components: {
-        menuItem
+        product
 
     }
 }

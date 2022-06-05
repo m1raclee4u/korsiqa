@@ -1,49 +1,49 @@
 <template>
     <div>        
-        <div v-if="menuItem.size==='big'">            
-            <div :class="{menu__item__big: true, last__element: menuItem.position==='last',}">
+        <div v-if="product.size==='big'">            
+            <div :class="{menu__item__big: true, last__element: product.position==='last',}">
                 <div class="menu__item__big__info">
-                    <h4>{{menuItem.tags123}}</h4>
+                    <h4>{{product.tags123}}</h4>
                         <div class="menu__item__big__header">
-                            <h1>{{menuItem.name}}</h1>
+                            <h1>{{product.name}}</h1>
                         </div>    
                         <div class="menu__item__big__info__lower">        
-                            <span>{{menuItem.info}}</span>
+                            <span>{{product.info}}</span>
                             <div class="menu__item__big__buy">
                                 <div class="menu__item__big__price">
-                                    <h5>от {{menuItem.price}} ₽</h5>
-                                    <h3>{{menuItem.priceOld}} ₽</h3>
+                                    <h5>от {{product.price}} ₽</h5>
+                                    <h3>{{product.priceOld}} ₽</h3>
                                 </div>
-                                <button class="buy" @click="sendDataItemPage">
+                                <button class="buy" @click="sendDataToParent">
                                     <span>Выбрать</span>                
                                 </button>           
                             </div>
                         </div>   
                 </div>
-                <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + menuItem.image)" alt="" >
+                <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + product.image)" alt="" >
             </div>
         </div>
         <div v-else>
-            <div :class="{last__element: menuItem.position==='last', menu__item: true, hot: menuItem.type==='hot'}">     
-                <div :class="{menu__item__tag: true, new: menuItem.type==='new', superhit: menuItem.type==='superhit', hot: menuItem.type==='hot'}">
-                    <span v-if="menuItem.type==='new'">новинка</span>
-                    <span v-if="menuItem.type==='superhit'">суперхит</span>
-                    <span v-if="menuItem.type==='hot'">оссстрый</span>
+            <div :class="{last__element: product.position==='last', menu__item: true, hot: product.type==='hot'}">     
+                <div :class="{menu__item__tag: true, new: product.type==='new', superhit: product.type==='superhit', hot: product.type==='hot'}">
+                    <span v-if="product.type==='new'">новинка</span>
+                    <span v-if="product.type==='superhit'">суперхит</span>
+                    <span v-if="product.type==='hot'">оссстрый</span>
                 </div>
-                <Nuxt-link to="/oneItemPage" @click="sendDataItemPage"><img :src="require('../static/burger_menu_item/' + menuItem.image)" alt="" class="menu__item__back"></Nuxt-link>   
+                <Nuxt-link to="/oneItemPage"><img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back"></Nuxt-link>   
                 <div class="menu__item__info">
                     <div class="menu__item__header">
-                        <h1>{{menuItem.name}}</h1> 
+                        <h1>{{product.name}}</h1> 
                     </div>
                     <div class="menu__item__buy">
-                        <span>{{menuItem.info}}</span>   
+                        <span>{{product.info}}</span>   
                         <div class="menu__item__price">
                             <div class="prices">
-                                <h5>от {{menuItem.price}} ₽</h5>
-                                <h3>{{menuItem.priceOld}} ₽</h3>
+                                <h5>от {{product.price}} ₽</h5>
+                                <h3>{{product.priceOld}} ₽</h3>
                             </div>                            
                             <button class="buy" @click="sendDataToParent">
-                            <!-- <button class="buy" @click="addToCart(menuItem)"> -->
+                            <!-- <button class="buy" @click="addToCart(product)"> -->
                                 <span>Выбрать</span>              
                             </button>  
                         </div>         
@@ -57,19 +57,20 @@
 
 <script>
 export default {
-    name: "menuItem",
+    name: "product",
     props: [
-        "menuItem"
+        "product"
     ],  
     methods: {
-        // addToCart(menuItem) {
-        //     this.$store.commit('addToCart', menuItem);
+        // addToCart(product) {
+        //     this.$store.commit('addToCart', product);
         // },
         sendDataToParent (){
-            this.$emit('sendArticle', this.menuItem)
+            this.$emit('sendArticle', this.product);
+            console.log(this.product)
         },
         sendDataItemPage (){
-            this.$emit('sendData', this.menuItem.id)
+            this.$emit('sendData', this.product.id)
         },
     }
     

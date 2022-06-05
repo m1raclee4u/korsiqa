@@ -11,12 +11,12 @@
         </ul>
         <div class="all_items">
             
-            <div v-for="menuItem in $store.state.menuItems" :key="menuItem.id">                
-                <menuItem :menuItem="menuItem" 
-                    :key="menuItem.id" 
+            <div v-for="product in $store.state.products" :key="product.id">                
+                <product :product="product" 
+                    :key="product.id" 
                     @sendArticle="addToCart"                    
-                    v-if="selected==='Все'||menuItem.tag.indexOf(selected)!==-1">
-                </menuItem>
+                    v-if="selected==='Все'||product.tag.indexOf(selected)!==-1">
+                </product>
             </div>            
         </div>
     </div>
@@ -25,7 +25,7 @@
 <script>
 
 import navBar from './menuNavigation.vue'
-import menuItem from './menuItem.vue'
+import product from './product.vue'
 export default {
     name: 'cart',
     data(){
@@ -47,13 +47,10 @@ export default {
     },
     components: {
         navBar,
-        menuItem
+        product
     },
     methods: {
         addToCart(data){
-            this.$store.commit('addToCart', data);
-        },
-        addToItem(data){
             this.$store.commit('addToCart', data);
         },
     }
