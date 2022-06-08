@@ -6,6 +6,7 @@ export const state = () => ({
   isVisibleBasket: false,
   cart: [],
   cartCount: 0,
+  totalPrice: 0,
   products: [
     {
     id: 'pizza_1',
@@ -173,15 +174,30 @@ export const state = () => ({
     ]
     },
   ],
+  items: [
+    { message: 'Все'},
+    { message: 'Акции'},
+    { message: 'Мясные'},
+    { message: 'Вегетарианские'},
+    { message: 'Морские и Рыбные'},
+    { message: 'Закрытые'},
+    { message: 'Гриль'},
+    { message: 'Острые'},
+    { message: 'Акция'}
+  ],            
+  selected: 'Все',
 })
 
 export const mutations = {
     openBasket(state, basket) {
       state.isVisibleBasket=basket
     },
+    changeNavigationPizza(state, name) {
+      state.selected=name
+    },
     addToCart(state, product) {
-        let found = state.cart.find(product => product.id == product.id);
-        
+        let found = state.cart.find(cartItem => cartItem.id === product.id);
+
         if (found) {
             found.quantity ++;
             found.totalPrice = found.quantity * found.price;
@@ -192,14 +208,28 @@ export const mutations = {
             Vue.set(product, 'totalPrice', product.price);
         }        
         state.cartCount++;
-        this.commit('saveCart');
     },
-    saveCart(state) {
-      window.localStorage.setItem('cart', JSON.stringify(state.cart));
-      window.localStorage.setItem('cartCount', state.cartCount);
-    },    
-    
-    }
+    removeFromCart (state, product) {
+        // let found = state.cart.find(cartItem => cartItem.id == product.id);
+        // state.cartCount = state.cartCount -  found.quantity;
+        state.cart = state.cart.filter(prod => prod.id == product.id);
+        // state.cart = state.cart.filter(cart => cart === product.id);
+    },
+    incrementCartItem(state) {
+        let found = state.cart.find(cartItem => cartItem.id == product.id);
+        found.quantity++;        
+        state.cartCount++;
+    },
+    decrementCartItem(state, product){
+        let found = state.cart.find(cartItem => cartItem.id == product.id);
+        found.quantity--;
+        state.cartCount--;
+        if (found.quantity===0){
+            state.cartCount = state.cartCount -  found.quantity;
+            state.cart = state.cart.filter(cart => cart === product);
+        }
+    },
+}
 
 export const actions = {
 

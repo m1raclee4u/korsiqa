@@ -133,10 +133,5 @@
     flex-direction: column;
 }
 
-  @media screen and (min-width: 768px) and (max-width:1279px) {
-    .delivery__map{
-        display: none;
-    }
-}
 
 </style>

@@ -33,7 +33,7 @@
                 </div>                
             </div>
             <transition name="slide-fade">
-                <BasketMenu v-show="$store.state.isVisibleBasket" />
+                <CartMenu v-show="$store.state.isVisibleBasket" />
             </transition>
         </div>
     </header>

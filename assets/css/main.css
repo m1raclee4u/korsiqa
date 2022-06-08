@@ -80,11 +80,6 @@
       text-decoration: none;
     }
     
-    @media (max-width: 1366px) {
-      .delivery__map{
-        width: 850px;
-      }
-    }
   
     
   

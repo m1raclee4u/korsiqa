@@ -10,13 +10,13 @@
                             <span>{{product.weight}} г</span>
                         </div>
                         <p> 
-                            <button>-</button>
+                            <button @click="$store.commit('decrementCartItem')">-</button>
                             {{product.quantity}} 
-                            <button>+</button>
+                            <button @click="$store.commit('incrementCartItem')">+</button>
                         </p>
                     </div>
                     <div class="oneBasketItemBasketInfo__right">
-                        <button class="oneBasketItemClose">
+                        <button class="oneBasketItemClose" @click="$store.commit('removeFromCart', $store.state.product)" >
                             X
                         </button>
                         <span>{{product.totalPrice}} Р</span>            
@@ -40,7 +40,7 @@
         <footer class="basket__footer" v-if="$store.state.cartCount > 0">
             <div class="footer__price">
                 <h2>Итого</h2>
-                <span>{{$store.state.cart.totalPrice}}Р</span>
+                <span>{{$store.state.totalPrice}} ₽</span>
             </div>            
             <button class="basket__buy" v-if="$store.state.cartCount > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                 <nuxt-link to="/cart" >Оформить покупку</nuxt-link>

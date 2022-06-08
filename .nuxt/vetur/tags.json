@@ -1,6 +1,6 @@
 {
-  "BasketMenu": {
-    "description": "Auto imported from components/basketMenu.vue"
+  "CartMenu": {
+    "description": "Auto imported from components/cartMenu.vue"
   },
   "Copyright": {
     "description": "Auto imported from components/copyright.vue"

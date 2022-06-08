@@ -2,10 +2,12 @@
     <div class="menu flex">  
         <ul class="navbar">
             <!-- <navBar v-for="item in items" :navBar="item" :key="item.message"></navBar> -->
-            <li v-for="item in items" 
+            <li 
+            v-for="item in $store.state.items" 
             :key="item.message" 
-            @click="selected = item.message" 
-            :class="{selected:selected===item.message}">
+            @click="$store.commit('changeNavigationPizza', item.message)"
+            :class="{selected:$store.state.selected===item.message}"
+            >
                 {{item.message}}
             </li>
         </ul>
@@ -15,7 +17,7 @@
                 <product :product="product" 
                     :key="product.id" 
                     @sendArticle="addToCart"                    
-                    v-if="selected==='Все'||product.tag.indexOf(selected)!==-1">
+                    v-if="$store.state.selected==='Все'||product.tag.indexOf($store.state.selected)!==-1">
                 </product>
             </div>            
         </div>
@@ -28,23 +30,6 @@ import navBar from './menuNavigation.vue'
 import product from './product.vue'
 export default {
     name: 'cart',
-    data(){
-        return{
-            items: [
-                { message: 'Все'},
-                { message: 'Акции'},
-                { message: 'Мясные'},
-                { message: 'Вегетарианские'},
-                { message: 'Морские и Рыбные'},
-                { message: 'Закрытые'},
-                { message: 'Гриль'},
-                { message: 'Острые'},
-                { message: 'Акция'}
-            ],            
-            selected: 'Все',
-
-        }
-    },
     components: {
         navBar,
         product

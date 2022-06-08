@@ -183,6 +183,9 @@ export default {
         width: 280px;
         height: 476px;
         margin: 0 53.333333px 60px 0;
+        @media screen and (min-width: 768px) and (max-width:1279px) {
+            margin: 0 13px 60px 0;
+        }
             &.hot{
                 background-image: url(@/static/burger_menu_item/fire.png);
                 background-repeat: no-repeat;
@@ -258,6 +261,7 @@ export default {
     }   
     .menu__item__header{
         margin-bottom: 15px;
+        height: 70px;
     }
     
     .menu__item__buy{
