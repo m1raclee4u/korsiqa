@@ -189,15 +189,17 @@ export const state = () => ({
 })
 
 export const mutations = {
+    initCart(state, cart) {
+        state.cart = cart;
+    },
+    initTotalPrice(state, totalPrice) {
+      state.totalPrice = totalPrice;
+    },
     openBasket(state, basket) {
       state.isVisibleBasket=basket
     },
     changeNavigationPizza(state, name) {
       state.selected=name
-    },
-    total (state){
-        let sumPrice = (product.id)
-        state.totalPrice
     },
     addToCart(state, product) {
         let found = state.cart.find(cartItem => cartItem.id === product.id);
@@ -205,27 +207,26 @@ export const mutations = {
         if (found) {
             found.quantity ++;
             found.totalPrice = found.quantity * found.price;
-            console.log(state.cart);
             state.totalPrice = Number(state.totalPrice) + Number(product.price);
-
         } else {
             state.cart.push(product);
-            console.log(state.cart);
+            state.totalPrice = Number(state.totalPrice) + Number(product.price);
             Vue.set(product, 'quantity', 1);
             Vue.set(product, 'totalPrice', product.price);
-            state.totalPrice = Number(state.totalPrice) + Number(product.price);     
-            
-
         }        
         state.cartCount++;
+        console.log(state.cart.length)
+        this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
+        this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
     },
     removeFromCart (state, product) {
         state.cart = state.cart.filter(prod => prod.id !== product.id);
         state.totalPrice = Number(state.totalPrice) - Number(product.price) * Number(product.quantity);
         state.cartCount = state.cartCount - product.quantity;
-        // let found = state.cart.find(cartItem => cartItem.id == product.id);
-        // state.cartCount = state.cartCount -  found.quantity;
-        // state.cart = state.cart.filter(cart => cart === product.id);
+        this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
+        this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
+
+
     },
     incrementCartItem(state, product) {
         let found = state.cart.find(cartItem => cartItem.id == product.id);
@@ -233,8 +234,8 @@ export const mutations = {
         found.totalPrice = found.quantity * found.price;
         state.cartCount++;
         state.totalPrice = Number(state.totalPrice) + Number(product.price);
-
-        
+        this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
+        this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});     
     },
     decrementCartItem(state, product){
         let found = state.cart.find(cartItem => cartItem.id == product.id);
@@ -246,13 +247,24 @@ export const mutations = {
             state.cart = state.cart.filter(prod => prod.id !== product.id);
         }
         state.totalPrice = Number(state.totalPrice) - Number(product.price);
-        console.log(state.cartCount)
+        this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
+        this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
     },
 }
 
 export const actions = {
-
-}
+    nuxtServerInit({commit}, {req}) {   
+      //инициализация корзины
+      if (this.$cookies.get('cart')) {
+        let cart = this.$cookies.get('cart');
+        commit('initCart', cart);
+      }
+      if (this.$cookies.get('totalPrice')) {
+        let totalPrice = this.$cookies.get('totalPrice');
+        commit('initTotalPrice', totalPrice);
+      }
+    }
+  }
 
 export const getters = {
     

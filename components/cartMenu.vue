@@ -1,7 +1,7 @@
 <template>
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
-        <div class="basket__slider" v-if="$store.state.cartCount > 0">
+        <div class="basket__slider" v-if="$store.state.cart.length > 0">            
             <div v-for="product in $store.state.cart" :key="product.id">
                 <div class="oneBasketItem">
                     <div class="oneBasketItemBasketInfo__left">
@@ -19,13 +19,12 @@
                         <button class="oneBasketItemClose" @click="$store.commit('removeFromCart', product); " >
                             X
                         </button>
-                        <span>{{product.totalPrice}} Р</span>            
+                        <span>{{product.totalPrice}} ₽</span>            
                     </div>
-                 </div>
-            </div>                 
+                </div>
+            </div> 
         </div>
-        
-        <div class="basket__empty" v-if="$store.state.cartCount === 0">
+        <div class="basket__empty" v-if="$store.state.cart.length === 0">
             <img src="https://dodopizza-a.akamaihd.net/site-static/dist/121df529925b0f43cc73.svg" alt="">
             <h3>Ой пусто</h3>
             <span>Ваша корзина пуста, откройте «Меню»
@@ -37,12 +36,12 @@
             </button>
         </div>
 
-        <footer class="basket__footer" v-if="$store.state.cartCount > 0">
+        <footer class="basket__footer" v-if="$store.state.cart.length > 0">
             <div class="footer__price">
                 <h2>Итого</h2>
                 <span>{{$store.state.totalPrice}} ₽</span>
             </div>            
-            <button class="basket__buy" v-if="$store.state.cartCount > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
+            <button class="basket__buy" v-if="$store.state.cart.length > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                 <nuxt-link to="/cart" >Оформить покупку</nuxt-link>
             </button>
         </footer>
@@ -68,6 +67,7 @@
     height: 70px;
     padding: 25px 20px 25px 20px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+    transition: width 2s;
         
 }
 .oneBasketItemBasketInfo__left{
@@ -107,7 +107,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px 20px 20px;
     height: 400px;
         img{
             margin-bottom: 25px;

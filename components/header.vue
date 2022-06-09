@@ -26,7 +26,8 @@
                         </button>
                         <div class="basket">
                             <button class="header__basket" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                                Корзина
+                               <span v-if="$store.state.cart.length > 0">{{$store.state.totalPrice}} ₽</span>
+                               <span v-else>Корзина</span>
                             </button>
                         </div>
                     </div>                    
@@ -198,7 +199,8 @@ a {
     font-size: 14px;
 }
 .header__basket{
-    padding: 12px 30px;
+    width: 110px;
+    height: 43px;
     border-radius: 3px;
     border: 1px solid transparent;
     background-color: orangered;

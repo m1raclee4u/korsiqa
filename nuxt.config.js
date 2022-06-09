@@ -39,6 +39,9 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
+    // Simple usage
+    'cookie-universal-nuxt',  
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -47,10 +50,10 @@ export default {
     baseURL: '/',
   },
 
-  // server: {
-  //   host: '192.168.1.16',
-  //   port: 8000,
-  // },
+  server: {
+    host: '192.168.4.110',
+    port: 8000,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -59,11 +62,4 @@ export default {
   ssr: true,
   target: 'server',
 
-  modules: [
-    // Simple usage
-    'cookie-universal-nuxt',
-
-    // With options
-    ['cookie-universal-nuxt', { alias: 'cookiz' }],
- ]
 }
