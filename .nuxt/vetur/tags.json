@@ -27,7 +27,7 @@
     "description": "Auto imported from components/newsSlider.vue"
   },
   "OneItemPageItem": {
-    "description": "Auto imported from components/oneItemPage-Item.vue"
+    "description": "Auto imported from components/oneItemPageItem.vue"
   },
   "OneNews": {
     "description": "Auto imported from components/oneNews.vue"
@@ -37,6 +37,9 @@
   },
   "Product": {
     "description": "Auto imported from components/product.vue"
+  },
+  "ProductChoise": {
+    "description": "Auto imported from components/productChoise.vue"
   },
   "Snacks": {
     "description": "Auto imported from components/snacks.vue"

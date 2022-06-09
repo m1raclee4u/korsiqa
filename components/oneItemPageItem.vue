@@ -3,7 +3,7 @@
         <div class="kostyl">
             <div class="kostyl2"></div>
             <main class="main flex">
-                <div v-for="product in $store.state.product" :key="product.id">
+                <div v-on:sendDataToSlug="sendDataToSlug" :key="product.id">
                     <div class="slider-item">
                         <img src="../static/cart/burger.png" alt="" class="govno">
                     </div>

@@ -5,7 +5,7 @@
                 <div>
                     <nuxt-link to="/" class="header__logo">
                         <h1>
-                            KORSIQA
+                            LA PIZZA
                         </h1>
                     </nuxt-link>
                 </div>   
@@ -46,6 +46,8 @@ export default {
   data(){
         return{                   
             items: [
+                { message: 'Пицца'},
+                { message: 'Роллы'},
                 { message: 'Бургеры'},
                 { message: 'Закуски'},
                 { message: 'Десерты'},
@@ -113,7 +115,7 @@ export default {
         li{
         font-size: 15px;
         font-weight: 300;
-        margin-right: 25px;
+        margin-right: 18px;
         transition: 0.5s;
         color: white;        
         cursor: pointer;

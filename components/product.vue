@@ -12,7 +12,7 @@
                             <div class="menu__item__big__buy">
                                 <div class="menu__item__big__price">
                                     <h5>от {{product.price}} ₽</h5>
-                                    <h3>{{product.priceOld}} ₽</h3>
+                                    <h3 v-if="product.priceOld !==''">{{product.priceOld}} ₽</h3>
                                 </div>
                                 <button class="buy" @click="sendDataToParent">
                                     <span>Выбрать</span>                
@@ -20,7 +20,7 @@
                             </div>
                         </div>   
                 </div>
-                <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + product.image)" alt="" >
+                <Nuxt-link to="/oneItemPage" @click="sendDataToSlug"> <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + product.image)" alt=""></Nuxt-link>
             </div>
         </div>
         <div v-else>
@@ -30,7 +30,7 @@
                     <span v-if="product.type==='superhit'">суперхит</span>
                     <span v-if="product.type==='hot'">оссстрый</span>
                 </div>
-                <Nuxt-link to="/oneItemPage"><img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back"></Nuxt-link>   
+                <Nuxt-link to="/oneItemPage" @click="sendDataToSlug"><img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back"></Nuxt-link>   
                 <div class="menu__item__info">
                     <div class="menu__item__header">
                         <h1>{{product.name}}</h1> 
@@ -40,7 +40,7 @@
                         <div class="menu__item__price">
                             <div class="prices">
                                 <h5>от {{product.price}} ₽</h5>
-                                <h3>{{product.priceOld}} ₽</h3>
+                                <h3 v-if="product.priceOld > 0">{{product.priceOld}} ₽</h3>
                             </div>                            
                             <button class="buy" @click="sendDataToParent">
                             <!-- <button class="buy" @click="addToCart(product)"> -->
@@ -69,7 +69,7 @@ export default {
             this.$emit('sendArticle', this.product);
             // console.log(this.product)
         },
-        sendDataItemPage (){
+        sendDataToSlug (){
             this.$emit('sendData', this.product.id)
         },
     }

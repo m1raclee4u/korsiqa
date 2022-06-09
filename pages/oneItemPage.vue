@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header />
-    <oneItemPage-Item />
+    <oneItemPageItem />
     <snacks />
     <Footer />  
     <Copyright />
