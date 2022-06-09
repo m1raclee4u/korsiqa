@@ -195,39 +195,58 @@ export const mutations = {
     changeNavigationPizza(state, name) {
       state.selected=name
     },
+    total (state){
+        let sumPrice = (product.id)
+        state.totalPrice
+    },
     addToCart(state, product) {
         let found = state.cart.find(cartItem => cartItem.id === product.id);
 
         if (found) {
             found.quantity ++;
             found.totalPrice = found.quantity * found.price;
-            console.log(found.quantity);
+            console.log(state.cart);
+            state.totalPrice = Number(state.totalPrice) + Number(product.price);
+
         } else {
             state.cart.push(product);
+            console.log(state.cart);
             Vue.set(product, 'quantity', 1);
             Vue.set(product, 'totalPrice', product.price);
+            state.totalPrice = Number(state.totalPrice) + Number(product.price);     
+            
+
         }        
         state.cartCount++;
     },
     removeFromCart (state, product) {
+        state.cart = state.cart.filter(prod => prod.id !== product.id);
+        state.totalPrice = Number(state.totalPrice) - Number(product.price) * Number(product.quantity);
+        state.cartCount = state.cartCount - product.quantity;
         // let found = state.cart.find(cartItem => cartItem.id == product.id);
         // state.cartCount = state.cartCount -  found.quantity;
-        state.cart = state.cart.filter(prod => prod.id == product.id);
         // state.cart = state.cart.filter(cart => cart === product.id);
     },
-    incrementCartItem(state) {
+    incrementCartItem(state, product) {
         let found = state.cart.find(cartItem => cartItem.id == product.id);
         found.quantity++;        
+        found.totalPrice = found.quantity * found.price;
         state.cartCount++;
+        state.totalPrice = Number(state.totalPrice) + Number(product.price);
+
+        
     },
     decrementCartItem(state, product){
         let found = state.cart.find(cartItem => cartItem.id == product.id);
         found.quantity--;
         state.cartCount--;
+        found.totalPrice = found.quantity * found.price;
         if (found.quantity===0){
             state.cartCount = state.cartCount -  found.quantity;
-            state.cart = state.cart.filter(cart => cart === product);
+            state.cart = state.cart.filter(prod => prod.id !== product.id);
         }
+        state.totalPrice = Number(state.totalPrice) - Number(product.price);
+        console.log(state.cartCount)
     },
 }
 

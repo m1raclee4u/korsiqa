@@ -10,13 +10,13 @@
                             <span>{{product.weight}} г</span>
                         </div>
                         <p> 
-                            <button @click="$store.commit('decrementCartItem')">-</button>
+                            <button @click="$store.commit('decrementCartItem', product)">-</button>
                             {{product.quantity}} 
-                            <button @click="$store.commit('incrementCartItem')">+</button>
+                            <button @click="$store.commit('incrementCartItem', product)">+</button>
                         </p>
                     </div>
                     <div class="oneBasketItemBasketInfo__right">
-                        <button class="oneBasketItemClose" @click="$store.commit('removeFromCart', $store.state.product)" >
+                        <button class="oneBasketItemClose" @click="$store.commit('removeFromCart', product); " >
                             X
                         </button>
                         <span>{{product.totalPrice}} Р</span>            

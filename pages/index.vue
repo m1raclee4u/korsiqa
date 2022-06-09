@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-      <transition name="slide-opacity">
+      <!-- <transition name="slide-opacity">
         <div class="blackout" v-show="$store.state.isVisibleBasket" @click="$store.commit('openBasket', false)"></div>
-      </transition>
+      </transition> -->
     <Header />
     <FoodSlider />
     <NewsSlider/>

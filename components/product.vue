@@ -67,7 +67,7 @@ export default {
         // },
         sendDataToParent (){
             this.$emit('sendArticle', this.product);
-            console.log(this.product)
+            // console.log(this.product)
         },
         sendDataItemPage (){
             this.$emit('sendData', this.product.id)

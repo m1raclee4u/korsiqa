@@ -2,22 +2,22 @@
   {
     "name": "cart",
     "path": "/cart",
-    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa_old\\\\pages\\\\cart.vue",
+    "component": "/Users/andrey/Documents/GitHub/korsiqa/pages/cart.vue",
     "chunkName": "pages/cart",
-    "_name": "_44b5b43c"
+    "_name": "_28c48a1a"
   },
   {
     "name": "oneItemPage",
     "path": "/oneItemPage",
-    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa_old\\\\pages\\\\oneItemPage.vue",
+    "component": "/Users/andrey/Documents/GitHub/korsiqa/pages/oneItemPage.vue",
     "chunkName": "pages/oneItemPage",
-    "_name": "_00838f48"
+    "_name": "_664af476"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa_old\\\\pages\\\\index.vue",
+    "component": "/Users/andrey/Documents/GitHub/korsiqa/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_17ccdc66"
+    "_name": "_4de5ac8f"
   }
 ]
