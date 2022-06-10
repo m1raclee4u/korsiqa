@@ -2,7 +2,7 @@
     <div class="basket__menu">
         <h1>Ваша корзина</h1>
         <div class="basket__slider" v-if="$store.state.cart.length > 0">            
-            <div v-for="product in $store.state.cart" :key="product.id">
+            <div v-for="product in $store.state.cartArray" :key="product.id">
                 <div class="oneBasketItem">
                     <div class="oneBasketItemBasketInfo__left">
                         <div class="oneBasketItemBasketItem__info">                
@@ -31,7 +31,7 @@
             и выберите понравившийся товар.<br>
             Мы доставим ваш заказ от 649 ₽</span>
             <button @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                <!-- <NuxtLink to="/">Вернутся в меню</NuxtLink>                 -->
+                <NuxtLink to="/">Вернутся в меню</NuxtLink>                
                 Вернутся в меню
             </button>
         </div>
@@ -42,7 +42,7 @@
                 <span>{{$store.state.totalPrice}} ₽</span>
             </div>            
             <button class="basket__buy" v-if="$store.state.cart.length > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                <nuxt-link to="/cart" >Оформить покупку</nuxt-link>
+                <Nuxt-link to="/cart" >Оформить покупку</Nuxt-link>
             </button>
         </footer>
     </div>

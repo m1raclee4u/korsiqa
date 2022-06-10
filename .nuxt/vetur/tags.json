@@ -2,6 +2,9 @@
   "CartMenu": {
     "description": "Auto imported from components/cartMenu.vue"
   },
+  "CartPageComponent1": {
+    "description": "Auto imported from components/cartPageComponent-1.vue"
+  },
   "Copyright": {
     "description": "Auto imported from components/copyright.vue"
   },

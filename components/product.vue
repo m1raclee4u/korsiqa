@@ -1,9 +1,14 @@
 <template>
     <div>        
         <div v-if="product.size==='big'">            
-            <div :class="{menu__item__big: true, last__element: product.position==='last',}">
+            <div :class="{menu__item__big: true, last__element: product.position==='last',  menu__item__big: true, hot: product.type==='hot'}">
                 <div class="menu__item__big__info">
-                    <h4>{{product.tags123}}</h4>
+                    <div :class="{menu__item__tag: true, new: product.type==='new', superhit: product.type==='superhit', hot: product.type==='hot', premium: product.type==='premium'}">
+                        <span v-if="product.type==='new'">новинка</span>
+                        <span v-if="product.type==='superhit'">суперхит</span>
+                        <span v-if="product.type==='hot'">оссстрый</span>
+                        <span v-if="product.type==='premium'">PREMIUM</span>
+                    </div>
                         <div class="menu__item__big__header">
                             <h1>{{product.name}}</h1>
                         </div>    
@@ -89,7 +94,7 @@ export default {
         flex-direction: row;
         justify-content: center;    
         width: 613px;
-        height: 450px;
+        height: 476px;
         margin: 0 30px 60px 0; 
             p{
                 width: 200px;
@@ -103,14 +108,15 @@ export default {
     .menu__item__big__info{
         display: flex;
         align-content: flex-end;
-        height: 476px;
+        height: 100%;
+        width: 280px;
         flex-direction: column;
         justify-content: space-between
         ;
         z-index: 3;
             h1{
-                margin-bottom: 12px;
-                font-size: 54px;
+                margin-bottom: 18px;
+                font-size: 56px;
                 font-weight: 300;
             };
             span{
@@ -131,11 +137,12 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 200px;
+        height: 137px;
     }
     .back_item_big{
-        width: 355px;
-        height: 100%;
+        width: 333px;
+        height: 406px;
+        max-width: inherit;
     }
     .menu__item__big__price{
         display: flex;
@@ -224,6 +231,15 @@ export default {
         }
         &.superhit{
             background-color: purple;
+        }
+        &.premium{
+            span{
+                color: #fcc918;
+                font-size: 16px;
+            }
+            justify-content: start;
+            letter-spacing: 3px;
+            font-weight: 300;
         }
         span{
             margin-top: -3px;

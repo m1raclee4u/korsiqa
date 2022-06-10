@@ -1,4 +1,5 @@
 export { default as CartMenu } from '../../components/cartMenu.vue'
+export { default as CartPageComponent1 } from '../../components/cartPageComponent-1.vue'
 export { default as Copyright } from '../../components/copyright.vue'
 export { default as Delivery } from '../../components/delivery.vue'
 export { default as FoodSlider } from '../../components/foodSlider.vue'

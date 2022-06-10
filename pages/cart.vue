@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <Header/>
+        <CartPageComponent-1/>
         <Footer/>        
         <Copyright/>        
     </div>   
@@ -8,11 +9,11 @@
 
 <script>
 export default {
-    
+
 }
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 
 </style>
