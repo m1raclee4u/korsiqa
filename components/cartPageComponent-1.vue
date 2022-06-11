@@ -11,12 +11,14 @@
             <div class="swiper-container cartSlider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" 
-                    v-for="product in $store.state.cart" 
-                    :key="product.id"
-                    
+                    v-for="product in $store.state.cartArray" 
+                    :key="product.id"                    
                     >
                         <div class="cartProduct">
-                            <img src="" alt="">
+                            <div class="img">
+                                <img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back" v-if="product.size !== 'big'">
+                                <img :src="require('../static/burger_menu_item_big/' + product.image)" alt="" class="menu__item__back" v-else>
+                            </div>                           
                             <div class="cartInfo">
                                 <h1>{{product.name}}</h1>
                                 <h2>{{product.weight}} г</h2>
@@ -66,15 +68,20 @@ export default {
         flex-direction: row;
     }
     .cartInfo{
+        
         padding: 35px;
         height: 185px;
         align-items: center;
         justify-content: start;
             h1{
-                margin-bottom: 15px;
+                margin-bottom: 10px;
+                font-weight: 400;
             }
             h2{
                 margin-bottom: 35px;
+                font-weight: 400;
+                font-size: 13px;
+                color: white;
             }
             .priceAndQuantitiy{
                 margin-bottom: 35px;
@@ -89,11 +96,18 @@ export default {
         height: 436px;
         background-color: #252525;
         display: flex;
-        flex-direction: column;
-        
-            img{
-                height: 250px;
-            }
+        flex-direction: column;        
+           
+    }
+    .img{
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+        height: 150px;
+        width: 228px;
+        }
     }
     span{
         font-size: 13px;
