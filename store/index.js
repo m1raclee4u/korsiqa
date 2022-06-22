@@ -53,7 +53,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '4',
+    id: 4,
     quantity: '1',
     name: 'Индейка в мандаринах',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -68,7 +68,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '5',
+    id: 5,
     quantity: '1',
     name: 'Индейка в мандаринах',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -82,7 +82,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '6',
+    id: 6,
     quantity: '1',
     name: 'Пепперони фреш',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -97,7 +97,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '7',
+    id: 7,
     quantity: '1',
     name: 'Какое-то название бургера',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -114,7 +114,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '8',
+    id: 8,
     quantity: '1',
     name: 'Вкусняшка 5',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -129,7 +129,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '9',
+    id: 9,
     quantity: '1',
     name: 'Вкусняшка 5',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -144,7 +144,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '10',
+    id: 10,
     quantity: '1',
     name: 'Вкусняшка 5',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -159,7 +159,7 @@ export const state = () => ({
     ]
     },
     {
-    id: '11',
+    id: 11,
     quantity: '1',
     name: 'Вкусняшка 5',
     info: 'Пастрами из индейки, соус альфредо, мандарины, цитрусовый соус, моцарелла, смесь сыров чеддер и пармезан', 
@@ -192,42 +192,32 @@ export const state = () => ({
 export const mutations = {
     initCart(state, cart) {
         state.cart = cart;
-        if (state.cart.length !== 0){
-          for (let i in state.cart) {
-            let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
-            prodID.quantity = state.cart[i].quantity;
-            state.cartArray.push(prodID);
-            //Vue.set(state.cartArray[i], 'quantity', state.cart[i].quantity)
-            console.log(state.cartArray);
-          }
+        for (let i in state.cart) {
+          let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
+          prodID.quantity = state.cart[i].quantity;
+          state.cartArray.push(prodID);
+          console.log(state.cartArray);            
+          let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
+          Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
+          // Vue.set(product, 'totalPrice', product.price);
         }
-        
+    },
+    pushToCartArray (state) {
+     
     },
     initTotalPrice(state, totalPrice) {
       state.totalPrice = totalPrice;
     },
     openBasket(state, basket) {
       state.isVisibleBasket=basket;
-      // console.log(state.cart);
-
-      
-
-      // for (let id in state.cart) {
-      //   let product = state.products.find(id);
-      // }
-      //   state.cartArray.push(push);        
-      // }
-
-      // let found = state.cart.find(prod => prod.id === product.id);
-      
     },
     changeNavigationPizza(state, name) {
       state.selected=name
     },
     addToCart(state, product) {
       let tempCart = state.cart;
-      let found = state.cartArray.find(prod => prod.id === product.id);
-
+      let found = state.cart.find(prod => prod.id === product.id);
+      console.log(found);
       if (found) {
         tempCart.filter(el=>el.id==product.id)[0].quantity++;
       } else {
@@ -235,34 +225,9 @@ export const mutations = {
           id: product.id,
           quantity: 1
         });
-            Vue.set(product, 'totalPrice', product.price);
-
-      
       }
-      state.cart = tempCart;
-      this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
-      
-      // state.cart[product.id] = 1;
-      // ÷  let found = state.cartArray.find(prod => prod.id === product.id);
-
-
-        // if (found) {
-        //     found.quantity ++; 
-        //     found.totalPrice = found.quantity * found.price;
-        //     state.totalPrice = Number(state.totalPrice) + Number(product.price);
-        //     console.log(state.cart);
-        //     this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
-        //     this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
-        // } else {
-        //     state.cartArray.push([Number(product.id), Number(product.quantity)]);
-        //     state.totalPrice = Number(state.totalPrice) + Number(product.price);
-        //     Vue.set(product, 'quantity', 1);
-        //     Vue.set(product, 'totalPrice', product.price);
-        //     this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
-        //     this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
-        // }        
-        // state.cartCount++;
-        // console.log(state.cartArray.length)
+      state.cart = tempCart;      
+      this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});     
     },
     removeFromCart (state, product) {
         state.cart = state.cartArray.filter(prod => prod.id !== product.id);
@@ -270,8 +235,6 @@ export const mutations = {
         // // state.cartCount = state.cartCount - product.quantity;
         this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
         this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
-
-
     },
     incrementCartItem(state, product) {
         let found = state.cartArray.find(cartItem => cartItem.id == product.id);
@@ -328,7 +291,7 @@ export const getters = {
 //       addToCart(state, product) {
 //         state.cart.push(product);
 //         console.log(product.name);
-        state.cartCount++;
+        // state.cartCount++;
 //       },       
 //       openBasket(state, basket) {
 //         state.isVisibleBasket=basket

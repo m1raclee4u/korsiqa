@@ -31,8 +31,7 @@
             и выберите понравившийся товар.<br>
             Мы доставим ваш заказ от 649 ₽</span>
             <button @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                <NuxtLink to="/">Вернутся в меню</NuxtLink>                
-                Вернутся в меню
+                <NuxtLink to="/">Вернутся в меню</NuxtLink>
             </button>
         </div>
 
@@ -41,15 +40,22 @@
                 <h2>Итого</h2>
                 <span>{{$store.state.totalPrice}} ₽</span>
             </div>            
-            <button class="basket__buy" v-if="$store.state.cart.length > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                <Nuxt-link to="/cart" >Оформить покупку</Nuxt-link>
-            </button>
+            <Nuxt-link to="/cart" class="basket__buy" v-if="$store.state.cart.length > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
+                <span>Оформить покупку</span>
+            </Nuxt-link>
         </footer>
     </div>
 </template>
 
 <script>
-
+export default {
+    mounted() {
+        this.$nextTick(function () {
+            if (this.$store.state.isVisibleBasket)
+            this.$store.commit('openBasket', !this.$store.state.isVisibleBasket)
+        })
+        }
+   }
 </script>
 
 <style lang="scss" scoped>
@@ -108,7 +114,7 @@
     justify-content: center;
     align-items: center;
     padding: 0px 20px 20px 20px;
-    height: 400px;
+    height: 375px;
         img{
             margin-bottom: 25px;
         }
@@ -182,7 +188,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
         h2{
             color: black;
             font-weight: 400;
@@ -201,6 +207,7 @@
     cursor: pointer;
     font-size: 15px;
     font-weight: 400;
+    text-align: center;
 }
 
 </style>

@@ -25,7 +25,7 @@ import 'swiper/swiper-bundle.css'
 Swiper.use([ Navigation, Pagination ])
 
 export default {
-    mounted() {
+    async mounted() {
     new Swiper('.newsSlider', {
       // loop: true,
       slidesPerView: 5.5,

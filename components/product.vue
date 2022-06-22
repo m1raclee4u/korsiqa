@@ -67,16 +67,10 @@ export default {
         "product"
     ],  
     methods: {
-        // addToCart(product) {
-        //     this.$store.commit('addToCart', product);
-        // },
         sendDataToParent (){
             this.$emit('sendArticle', this.product);
             // console.log(this.product)
-        },
-        sendDataToSlug (){
-            this.$emit('sendData', this.product.id)
-        },
+        }
     }
     
 }
