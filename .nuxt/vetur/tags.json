@@ -2,8 +2,20 @@
   "CartMenu": {
     "description": "Auto imported from components/cartMenu.vue"
   },
+  "CartOrder": {
+    "description": "Auto imported from components/cartOrder.vue"
+  },
+  "CartOrderButton": {
+    "description": "Auto imported from components/cartOrderButton.vue"
+  },
   "CartPageComponent1": {
     "description": "Auto imported from components/cartPageComponent-1.vue"
+  },
+  "CartPageRecomendedProducts": {
+    "description": "Auto imported from components/cartPageRecomendedProducts.vue"
+  },
+  "CartPromocode": {
+    "description": "Auto imported from components/cartPromocode.vue"
   },
   "Copyright": {
     "description": "Auto imported from components/copyright.vue"

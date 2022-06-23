@@ -2,6 +2,10 @@
     <div class="container">
         <Header/>
         <CartPageComponent-1/>
+        <CartPageRecomendedProducts/>
+        <section>
+            <CartPromocode/>
+        </section>
         <Footer/>        
         <Copyright/>        
     </div>   
@@ -9,7 +13,7 @@
 
 <script>
 export default {
-
+  
 }
 </script>
 

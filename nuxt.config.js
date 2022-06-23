@@ -50,10 +50,10 @@ export default {
     baseURL: '/',
   },
 
-  server: {
-    host: '192.168.4.110',
-    port: 8000,
-  },
+  // server: {
+  //   host: '192.168.4.110',
+  //   port: 8000,
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
