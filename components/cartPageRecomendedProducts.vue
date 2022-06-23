@@ -22,7 +22,7 @@
                                         <h2 v-if="product.tag !== 'Напитки'">г</h2>                   
                                     </div>
                                 </div>
-                                <button @click="addToCart">Добавить</button>
+                                <button @click="addToCart(product)">Добавить</button>
                             </div>
                         </div>
                     </div>                   
@@ -56,7 +56,7 @@ export default {
     }, 
     methods: {
         addToCart(product){
-            this.$store.commit('addToCart', product);
+            this.$store.dispatch('cartArrayInit', product);
         },
     }
     

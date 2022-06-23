@@ -13,10 +13,10 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_7722c4a1 from 'nuxt_plugin_plugin_7722c4a1' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_cookieuniversalnuxt_1bfff9ec from 'nuxt_plugin_cookieuniversalnuxt_1bfff9ec' // Source: .\\cookie-universal-nuxt.js (mode: 'all')
-import nuxt_plugin_axios_68eb6244 from 'nuxt_plugin_axios_68eb6244' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\plugins\\element-ui (mode: 'all')
+import nuxt_plugin_plugin_8772fece from 'nuxt_plugin_plugin_8772fece' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_cookieuniversalnuxt_24716ad7 from 'nuxt_plugin_cookieuniversalnuxt_24716ad7' // Source: ./cookie-universal-nuxt.js (mode: 'all')
+import nuxt_plugin_axios_1b7a092f from 'nuxt_plugin_axios_1b7a092f' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ../plugins/element-ui (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -213,16 +213,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_7722c4a1 === 'function') {
-    await nuxt_plugin_plugin_7722c4a1(app.context, inject)
+  if (typeof nuxt_plugin_plugin_8772fece === 'function') {
+    await nuxt_plugin_plugin_8772fece(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_cookieuniversalnuxt_1bfff9ec === 'function') {
-    await nuxt_plugin_cookieuniversalnuxt_1bfff9ec(app.context, inject)
+  if (typeof nuxt_plugin_cookieuniversalnuxt_24716ad7 === 'function') {
+    await nuxt_plugin_cookieuniversalnuxt_24716ad7(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_68eb6244 === 'function') {
-    await nuxt_plugin_axios_68eb6244(app.context, inject)
+  if (typeof nuxt_plugin_axios_1b7a092f === 'function') {
+    await nuxt_plugin_axios_1b7a092f(app.context, inject)
   }
 
   if (typeof nuxt_plugin_elementui_d905880e === 'function') {

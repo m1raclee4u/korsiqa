@@ -191,7 +191,7 @@ export const state = () => ({
 
 export const mutations = {
     initCart(state, cart) {
-        state.cart = cart;
+        state.cart = cart;  
         for (let i in state.cart) {
           let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
           prodID.quantity = state.cart[i].quantity;
@@ -200,10 +200,10 @@ export const mutations = {
           let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
           Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
           // Vue.set(product, 'totalPrice', product.price);
-        }
+        }      
     },
     pushToCartArray (state) {
-     
+      
     },
     initTotalPrice(state, totalPrice) {
       state.totalPrice = totalPrice;
@@ -272,6 +272,10 @@ export const actions = {
         let totalPrice = this.$cookies.get('totalPrice');
         commit('initTotalPrice', totalPrice);
       }
+    },
+    cartArrayInit ({commit}) {
+      commit('addToCart'),
+      commit('initCart')
     }
   }
 
