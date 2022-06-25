@@ -25,7 +25,7 @@
                             </div>
                         </div>   
                 </div>
-                <Nuxt-link to="/oneItemPage" @click="sendDataToSlug"> <img class="back_item_big" :src=" require('../static/burger_menu_item_big/' + product.image)" alt=""></Nuxt-link>
+                <Nuxt-link class="transitionHover" to="/oneItemPage"><img :src="require('../static/burger_menu_item_big/' + product.image)" alt="" class="back_item_big"></Nuxt-link>
             </div>
         </div>
         <div v-else>
@@ -35,7 +35,7 @@
                     <span v-if="product.type==='superhit'">суперхит</span>
                     <span v-if="product.type==='hot'">оссстрый</span>
                 </div>
-                <Nuxt-link to="/oneItemPage" @click="sendDataToSlug"><img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back"></Nuxt-link>   
+                <Nuxt-link class="transitionHover" to="/oneItemPage"><img :src="require('../static/burger_menu_item/' + product.image)" alt="" class="menu__item__back"></Nuxt-link>   
                 <div class="menu__item__info">
                     <div class="menu__item__header">
                         <h1>{{product.name}}</h1> 
@@ -171,6 +171,9 @@ export default {
             span{
                 color: white;
             }
+            &.hover{
+                
+            }
     }
 // -----------------------------------------------------------------
     .menu__item{              
@@ -239,15 +242,18 @@ export default {
             margin-top: -3px;
         }
     }
+    .transitionHover{
+       &:hover{
+            margin-bottom: 10px;
+            transition: all .1s ease;
+            // transform: 10px;
+            // opacity: 0;
+        }
+    }
     .menu__item__back{
         width: 100%;
         height: 190px;
-        :-moz-focusring{
-                padding: 10px;
-                transition: all .5s ease;
-                transform: 10px;
-                opacity: 0;
-            }
+        
         
     }
     .menu__item__info{

@@ -56,7 +56,8 @@ export default {
     }, 
     methods: {
         addToCart(product){
-            this.$store.dispatch('cartArrayInit', product);
+            this.$store.commit('addToCart', product);
+            // this.$store.dispatch('nuxtServerInit');
         },
     }
     

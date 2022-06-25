@@ -39,16 +39,20 @@
                     <div class="swiper-slide" :class="{opacity: $store.state.cartArray.length > 0}">
                         <Nuxt-Link to="/" class="addProduct">                                
                             <span>Добавьте <br> еще что-нибудь</span>
+                            <img :src="require('../static/1270001.svg')" alt="" style="width: 35px; height: 35px">
+
                         </Nuxt-Link>
                     </div>
                     <div v-if="$store.state.cartArray.length <= 3" class="swiper-slide" :class="{opacity: $store.state.cartArray.length > 0}">
                         <Nuxt-Link to="/" class="addProduct">                                
                             <span>Добавьте <br> еще что-нибудь</span>
+                            <img :src="require('../static/1270001.svg')" alt="" style="width: 35px; height: 35px">
                         </Nuxt-Link>
                     </div>
                     <div v-if="$store.state.cartArray.length <= 2" class="swiper-slide" :class="{opacity: $store.state.cartArray.length > 0}">
                         <Nuxt-Link to="/" class="addProduct">                                
                             <span>Добавьте <br> еще что-нибудь</span>
+                            <img :src="require('../static/1270001.svg')" alt="" style="width: 35px; height: 35px">
                         </Nuxt-Link>
                     </div>
                 </div>
@@ -76,9 +80,7 @@ export default {
     })
     }, 
     methods: {
-        addToCart(product){
-            this.$store.commit('addToCart', product);
-        },
+        
     }
     
 }
@@ -121,9 +123,19 @@ export default {
                 // text-align: center;
             }
             h3 {
+                width: 50px;
+                height: 20px;
                 color: orangered;
                 font-size: 11px;
                 font-weight: 400;
+                text-align: center;
+                cursor: pointer;
+                    &:hover{
+                        font-weight: 500;
+                        // color: orangered;
+                        // font-size: 12px;
+                        // transform: translate3d(0px, -0.5px, 0px);
+                    }
             }
             .priceAndQuantitiy{
                 margin-bottom: 35px;
@@ -153,13 +165,15 @@ export default {
     }
     .addProduct{
         width: 265px;
-        height: 436px;
+        height: 430px;
         background-color: #252525;
         display: flex;
         flex-direction: column; 
         justify-content: center;
+        align-items: center;
             
             span {
+                // font-weight: 300;
                 padding: 15px;
                 font-size: 28px;
                 text-align: center;
