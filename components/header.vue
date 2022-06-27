@@ -26,10 +26,16 @@
                         </button>
                         <div class="basket">
                             <button class="header__basket" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
-                               <span v-if="$store.state.cart.length > 0">{{$store.state.totalPrice}} ₽</span>
-                               <span v-else>Корзина</span>
+                               Корзина
                             </button>
+                            <div class="counter" v-if="$store.state.cart.length > 0">
+                                <span>
+                                    {{$store.state.totalPrice}}
+                                </span>
+                            </div>
                         </div>
+                        
+
                     </div>                    
                 </div>                
             </div>
@@ -69,6 +75,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .counter{
+        text-align: center;
+        color: black;
+        position: absolute;
+        width: 25px; 
+        height: 25px;
+        margin-top: -12px;
+        margin-left: 98px;
+        // right: 12px;
+        // top: -10px;
+        border-radius: 50%;
+        background: white;
+    }
 
     .wrapper{
         align-items: flex-end;
@@ -86,9 +105,10 @@ export default {
     }
 
     .basket{
+        // width: 110px;
         z-index: 110;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
 
@@ -192,7 +212,9 @@ a {
 }
 .header__login{
     margin: 0 25px 0 0;
-    padding: 12px 30px;
+    width: 100px;
+    height: 45px;
+    // padding: 12px 30px;
     border-radius: 3px;
     border: 1px solid white;
     background-color: rgba(255, 0, 0, 0);
@@ -202,7 +224,7 @@ a {
 }
 .header__basket{
     width: 110px;
-    height: 43px;
+    height: 45px;
     border-radius: 3px;
     border: 1px solid transparent;
     background-color: orangered;
