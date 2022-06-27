@@ -19,7 +19,7 @@
                                     <h5>от {{product.price}} ₽</h5>
                                     <h3 v-if="product.priceOld !==''">{{product.priceOld}} ₽</h3>
                                 </div>
-                                <button class="buy" @click="sendDataToParent">
+                                <button class="buy" @click="addToCart(product)">
                                     <span>Выбрать</span>                
                                 </button>           
                             </div>
@@ -47,7 +47,7 @@
                                 <h5>от {{product.price}} ₽</h5>
                                 <h3 v-if="product.priceOld > 0">{{product.priceOld}} ₽</h3>
                             </div>                            
-                            <button class="buy" @click="sendDataToParent">
+                            <button class="buy" @click="addToCart(product)">
                             <!-- <button class="buy" @click="addToCart(product)"> -->
                                 <span>Выбрать</span>              
                             </button>  
@@ -67,16 +67,16 @@ export default {
         "product"
     ],  
     methods: {
-        sendDataToParent (){
-            this.$emit('sendArticle', this.product);
-            // console.log(this.product)
-        }
+        addToCart(product){
+            this.$store.commit('addToCart', product);
+        },
     }
     
 }
 </script>
 
 <style lang="scss" scoped>
+
     .last__element{
         margin-right: 0 !important;
     }
@@ -165,15 +165,44 @@ export default {
     }
     .buy{
         background-color: orangered;
-        padding: 15px 35px 15px 35px;
+        width: 120px;
+        height: 50px;
+        // padding: 15px 35px 15px 35px;
         border-radius: 5px;
         border: none;
             span{
                 color: white;
             }
             &.hover{
-                
+
             }
+    }
+    button {
+    color: white;
+    transition: 0.5s;
+
+    }
+    button:after {
+        content: '»';
+        position: relative;
+        opacity: 0;  
+        // top: 14px;
+        right: -35px;
+        transition: 0.5s;
+    }
+
+    button:hover{
+        padding-right: 15px;
+        padding-left:0px;
+        transition: 0.5s;
+
+    }
+
+    button:hover:after {
+        opacity: 1;
+        right: -15px;
+        transition: 0.5s;
+
     }
 // -----------------------------------------------------------------
     .menu__item{              

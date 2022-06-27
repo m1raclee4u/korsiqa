@@ -15,8 +15,7 @@
             
             <div v-for="product in $store.state.products" :key="product.id">                
                 <product :product="product" 
-                    :key="product.id" 
-                    @sendArticle="addToCart"                    
+                    :key="product.id"                 
                     v-if="$store.state.selected==='Все'||product.tag.indexOf($store.state.selected)!==-1">
                 </product>
             </div>            
@@ -35,9 +34,6 @@ export default {
         product
     },
     methods: {
-        addToCart(data){
-            this.$store.commit('addToCart', data);
-        },
     }
 }
 </script>

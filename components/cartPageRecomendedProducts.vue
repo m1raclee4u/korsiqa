@@ -47,8 +47,8 @@ export default {
         slidesPerView: 4.5,
         spaceBetween: 0,
         grabCursor: true,
-    })
-    },
+    })    
+    },    
       data() {
         return {
         input: ''
@@ -57,10 +57,8 @@ export default {
     methods: {
         addToCart(product){
             this.$store.commit('addToCart', product);
-            // this.$store.dispatch('nuxtServerInit');
         },
-    }
-    
+    }    
 }
 </script>
 
@@ -113,10 +111,6 @@ export default {
                 font-weight: 200;
                 font-size: 14px;
                 color: #bababa;
-            }
-            h4{
-                // height: 400px;
-                // text-align: center;
             }
             h3 {
                 color: orangered;

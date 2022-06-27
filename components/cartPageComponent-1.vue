@@ -79,6 +79,16 @@ export default {
         grabCursor: true,
     })
     }, 
+     updated() {
+      new Swiper('.cartSlider', {
+        // preloadImages: false,
+        // lazy: true,
+        // loop: true,
+        slidesPerView: 4.5,
+        spaceBetween: 30,
+        grabCursor: true,
+    })
+    }, 
     methods: {
         
     }
