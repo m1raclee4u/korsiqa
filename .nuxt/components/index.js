@@ -1,5 +1,4 @@
 export { default as CartMenu } from '../..\\components\\cartMenu.vue'
-export { default as CartOrder } from '../..\\components\\cartOrder.vue'
 export { default as CartOrderButton } from '../..\\components\\cartOrderButton.vue'
 export { default as CartPageComponent1 } from '../..\\components\\cartPageComponent-1.vue'
 export { default as CartPageRecomendedProducts } from '../..\\components\\cartPageRecomendedProducts.vue'

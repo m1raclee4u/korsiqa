@@ -2,9 +2,6 @@
   "CartMenu": {
     "description": "Auto imported from components/cartMenu.vue"
   },
-  "CartOrder": {
-    "description": "Auto imported from components/cartOrder.vue"
-  },
   "CartOrderButton": {
     "description": "Auto imported from components/cartOrderButton.vue"
   },

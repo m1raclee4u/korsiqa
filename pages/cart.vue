@@ -6,13 +6,13 @@
         <section>
             <CartPromocode/>
             <div class="price">
-                <!-- <div v-if="isDiscountRight"> -->
+                <div v-if="isDiscountRight">
                     <span>{{totalPrice}} ₽</span>
                     <h1>{{totalPriceWithDiscount}} ₽</h1>    
-                <!-- </div>  -->
-                <!-- <div v-else>
+                </div> 
+                <div v-else>
                     <h1>{{totalPrice}} ₽</h1>
-                </div> -->
+                </div>
                 <CartOrderButton/>
             </div>
         </section>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import input from '~/components/cartPromocode.vue';
+
 export default {
     computed: {
             totalPrice() {
