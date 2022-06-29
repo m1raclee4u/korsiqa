@@ -58,7 +58,7 @@ export default {
         addToCart(product){
             this.$store.commit('addToCart', product);
         },
-    }    
+    } 
 }
 </script>
 
@@ -69,6 +69,7 @@ export default {
         display: flex;                
     } 
 .someProducts{
+    width: 100%;
     margin-bottom: 75px;
         h1{
             margin-bottom: 35px;
@@ -101,6 +102,7 @@ export default {
                 width: 111px;
                 height: 42px;
                 margin: 0 !important;
+                color: white;
             }
             h1{
                 font-size: 12.5px;

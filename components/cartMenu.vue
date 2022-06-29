@@ -38,7 +38,7 @@
         <footer class="basket__footer" v-if="$store.state.cart.length > 0">
             <div class="footer__price">
                 <h2>Итого</h2>
-                <span>{{$store.state.totalPrice}} ₽</span>
+                <span>{{totalPrice}} ₽</span>
             </div>            
             <Nuxt-link to="/cart" class="basket__buy" v-if="$store.state.cart.length > 0" @click="$store.commit('openBasket', !$store.state.isVisibleBasket)">
                 <span>Оформить покупку</span>
@@ -54,8 +54,16 @@ export default {
             if (this.$store.state.isVisibleBasket)
             this.$store.commit('openBasket', !this.$store.state.isVisibleBasket)
         })
-        }
-   }
+        },
+    computed: {
+        totalPrice() {
+            return this.$store.state.cartArray.reduce(
+                (acc, val) => acc + val.quantity * val.price,
+                0
+            );
+            },
+        }, 
+}
 </script>
 
 <style lang="scss" scoped>

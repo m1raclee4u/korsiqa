@@ -30,7 +30,7 @@
                             </button>
                             <div class="counter" v-if="$store.state.cart.length > 0">
                                 <span>
-                                    {{$store.state.totalPrice}}
+                                    {{totalQuantity}}
                                 </span>
                             </div>
                         </div>
@@ -69,8 +69,15 @@ export default {
     },
     name: 'Basket',
     methods: {
-    }
-
+    },
+    computed: {
+        totalQuantity() {
+            return this.$store.state.cartArray.reduce(
+                (acc, val) => acc + val.quantity,
+                0
+            );
+            },
+        },
 }
 </script>
 
@@ -79,15 +86,20 @@ export default {
         text-align: center;
         color: black;
         position: absolute;
-        width: 25px; 
-        height: 25px;
-        margin-top: -12px;
-        margin-left: 98px;
+        width: 30px; 
+        height: 30px;
+        margin-top: -15px;
+        margin-left: 93px;
         // right: 12px;
         // top: -10px;
         border-radius: 50%;
         background: white;
-    }
+            span{
+                // margin-top: 10px;
+                font-size: 15px;
+                line-height: 30px;
+            }
+}
 
     .wrapper{
         align-items: flex-end;

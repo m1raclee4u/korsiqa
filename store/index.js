@@ -7,6 +7,7 @@ export const state = () => ({
   cart: [],
   cartCount: 0,
   totalPrice: 0,
+  // totalPriceWithDiscount: 0,
   cartArray: [],
   products: [
     {
@@ -192,23 +193,31 @@ export const state = () => ({
 export const mutations = {
   initCart(state, cart) {
       state.cart = cart;     
-      state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght)
+      state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght);
+      state.totalPrice = 0;
       for (let i in state.cart) {
         let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
         prodID.quantity = state.cart[i].quantity;
         state.cartArray.push(prodID);         
         let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
-        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
-        // Vue.set(product, 'totalPrice', product.price);
-    }     
+        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);
+      }     
        console.log(state.cartArray);   
     
+  },
+  initTotalPrice(state){
+    state.totalPrice = state.cartArray.reduce(
+      (acc, val) => acc + val.quantity * val.price,
+      0
+  );
+  console.log(state.totalPrice);
+  this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});   
   },
   pushToCartArray (state) {
     
   },
   initTotalPrice(state, totalPrice) {
-    state.totalPrice = totalPrice;
+    // state.totalPrice = totalPrice;
   },
   openBasket(state, basket) {
     state.isVisibleBasket=basket;
@@ -219,7 +228,6 @@ export const mutations = {
   addToCart(state, product) {
     let tempCart = state.cart;
     let found = state.cart.find(prod => prod.id === product.id);
-    // console.log(found);
     if (found) {
       tempCart.filter(el=>el.id==product.id)[0].quantity++;
     } else {
@@ -231,45 +239,42 @@ export const mutations = {
     state.cart = tempCart;      
     this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
     state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght);
-    // state.cartArray.lenght = 1;
-      for (let i in state.cart) {
+    for (let i in state.cart) {
         let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
         prodID.quantity = state.cart[i].quantity;
         state.cartArray.push(prodID);         
         let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
-        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
-        // Vue.set(product, 'totalPrice', product.price);
-
+        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);
     }
+    this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
      console.log(state.cartArray); 
   },
   removeFromCart (state, product) {
     state.cart = state.cart.filter(prod => prod.id !== product.id);
     this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});   
-    state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght)
-      for (let i in state.cart) {
+    state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght);
+    for (let i in state.cart) {
         let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
         prodID.quantity = state.cart[i].quantity;
         state.cartArray.push(prodID);         
         let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
-        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
-        // Vue.set(product, 'totalPrice', product.price);
+        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);
     }     
      console.log(state.cartArray); 
   },
   incrementCartItem(state, product) {
     let found = state.cart.find(cartItem => cartItem.id == product.id);
     found.quantity++;        
-    this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
+    // state.totalPrice = 0;  
     state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght)
-      for (let i in state.cart) {
+    for (let i in state.cart) {
         let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
         prodID.quantity = state.cart[i].quantity;
         state.cartArray.push(prodID);         
         let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
-        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
-        // Vue.set(product, 'totalPrice', product.price);
+        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);        
     }     
+    this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
      console.log(state.cartArray); 
   },
   decrementCartItem(state, product){
@@ -277,18 +282,20 @@ export const mutations = {
     found.quantity--;
     if (found.quantity===0){
         state.cart = state.cart.filter(prod => prod.id !== product.id);
+        // state.totalPrice = Number(state.totalPrice) - Number(totalPrice);
     }
     this.$cookies.set('cart', state.cart, {path: '/', maxAge: 60 * 60 * 24 * 7});
-    state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght)
-      for (let i in state.cart) {
+    state.cartArray = state.cartArray.splice(-1, state.cartArray.lenght);
+    for (let i in state.cart) {
         let prodID = state.products.find(el => Number(el.id) === Number(state.cart[i].id));
         prodID.quantity = state.cart[i].quantity;
         state.cartArray.push(prodID);         
         let totalPrice = state.cartArray[i].quantity * state.cartArray[i].price;
-        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);          
-        // Vue.set(product, 'totalPrice', product.price);
+        Vue.set(state.cartArray[i], 'totalPrice', totalPrice);
     }     
      console.log(state.cartArray); 
+      
+
   },
 }
 

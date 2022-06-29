@@ -91,7 +91,8 @@ export default {
     }, 
     methods: {
         
-    }
+    },
+    
     
 }
 </script>
@@ -109,6 +110,7 @@ export default {
         background-color: #3c3c3c;
     }    
     .cartSlider{
+        width: 100%;
         display: flex;
         flex-direction: row;
     }
@@ -219,6 +221,7 @@ export default {
         background-image: linear-gradient(to left, transparent, rgb(255, 89, 0));
     }
     .cart{
+        width: 100%;
         margin-top: 180px;
         height: 570px;        
     }
