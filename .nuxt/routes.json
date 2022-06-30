@@ -2,19 +2,19 @@
   {
     "name": "cart",
     "path": "/cart",
-    "component": "D:\\\\GitHub\\\\korsiqa\\\\pages\\\\cart.vue",
+    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa\\\\pages\\\\cart.vue",
     "chunkName": "pages/cart"
   },
   {
     "name": "oneItemPage",
     "path": "/oneItemPage",
-    "component": "D:\\\\GitHub\\\\korsiqa\\\\pages\\\\oneItemPage.vue",
+    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa\\\\pages\\\\oneItemPage.vue",
     "chunkName": "pages/oneItemPage"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\GitHub\\\\korsiqa\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\gambi\\\\Documents\\\\GitHub\\\\korsiqa\\\\pages\\\\index.vue",
     "chunkName": "pages/index"
   }
 ]

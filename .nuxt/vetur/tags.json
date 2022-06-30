@@ -1,9 +1,15 @@
 {
+  "CartBackButton": {
+    "description": "Auto imported from components/cartBackButton.vue"
+  },
   "CartMenu": {
     "description": "Auto imported from components/cartMenu.vue"
   },
   "CartOrderButton": {
     "description": "Auto imported from components/cartOrderButton.vue"
+  },
+  "CartPageComponent0": {
+    "description": "Auto imported from components/cartPageComponent-0.vue"
   },
   "CartPageComponent1": {
     "description": "Auto imported from components/cartPageComponent-1.vue"

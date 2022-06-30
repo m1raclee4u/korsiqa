@@ -1,21 +1,30 @@
 <template>
     <div class="container">
         <Header/>
-        <CartPageComponent-1/>
-        <CartPageRecomendedProducts/>
-        <section>
-            <CartPromocode/>
-            <div class="price">
-                <div v-if="isDiscountRight">
-                    <span>{{totalPrice}} ₽</span>
-                    <h1>{{totalPriceWithDiscount}} ₽</h1>    
-                </div> 
-                <div v-else>
-                    <h1>{{totalPrice}} ₽</h1>
+        <div v-if="$store.state.cartState === 0">
+            <CartPageComponent-0/>
+            <CartPageRecomendedProducts/>
+            <section>
+                <CartPromocode/>
+                <div class="price">
+                    <div class="withDiscount" >
+                        <span>{{totalPrice}}₽</span>
+                        <h1>{{totalPriceWithDiscount}}₽</h1>    
+                    </div> 
+                    <!-- <div v-else>
+                        <h1>{{totalPrice}} ₽</h1>
+                    </div> -->
+                    <CartOrderButton/>
                 </div>
+            </section>
+        </div>
+        <div v-if="$store.state.cartState === 1">
+            <CartPageComponent-1/>
+            <section>
+                <CartBackButton/>                              
                 <CartOrderButton/>
-            </div>
-        </section>
+            </section>
+        </div>      
         <Footer/>        
         <Copyright/>        
     </div>   
@@ -45,6 +54,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .withDiscount{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
     section{
         width: 1280px;
         display: flex;
@@ -53,11 +67,12 @@ export default {
     }
     .price{
         display: flex;
-        align-items: flex-start;
+        align-items: center;
             span{
-                color: white;
-                margin-right: 35px;
-                font-size: 18px;
+                color: gray;
+                margin-right: 20px;
+                font-size: 20px;
+                text-decoration: line-through;
             }
             h1{
                 margin-right: 50px;

@@ -5,8 +5,10 @@ import Vue from 'vue'
 export const state = () => ({
   isVisibleBasket: false,
   cart: [],
+  cartState: 0,
   cartCount: 0,
   totalPrice: 0,
+  
   // totalPriceWithDiscount: 0,
   cartArray: [],
   products: [
@@ -204,6 +206,10 @@ export const mutations = {
       }     
        console.log(state.cartArray);   
     
+  },
+  cartState(state, number){
+    state.cartState = number;
+    console.log(state.cartState);
   },
   initTotalPrice(state){
     state.totalPrice = state.cartArray.reduce(
