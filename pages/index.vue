@@ -10,8 +10,7 @@
     <Snacks />
     <Delivery />
     <Footer />
-    <Copyright />    
-    <Bootstrap />
+    <Copyright />   
   </div>
 </template>
 
