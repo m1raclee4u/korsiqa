@@ -11,6 +11,7 @@
     <Delivery />
     <Footer />
     <Copyright />    
+    <Bootstrap />
   </div>
 </template>
 

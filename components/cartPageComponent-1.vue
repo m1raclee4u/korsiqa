@@ -80,7 +80,7 @@ export default {
         input_number: '',
         input_street: '',
         input_home: '',
-        input_entrrance: '',
+        input_entrance: '',
         input_flat: '',
         input_floor: '',
         input_code: '',

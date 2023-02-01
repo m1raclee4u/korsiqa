@@ -254,6 +254,7 @@ export const mutations = {
     }
     this.$cookies.set('totalPrice', state.totalPrice, {path: '/', maxAge: 60 * 60 * 24 * 7});
      console.log(state.cartArray); 
+     console.log(state.cart); 
   },
   removeFromCart (state, product) {
     state.cart = state.cart.filter(prod => prod.id !== product.id);
